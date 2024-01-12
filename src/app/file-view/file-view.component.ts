@@ -1,24 +1,7 @@
-/*!
- * @license
- * Copyright 2016 Alfresco Software, Ltd.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, inject } from '@angular/core';
 import { ActivatedRoute, PRIMARY_OUTLET, Router } from '@angular/router';
-import { NodesApiService } from '@alfresco/adf-content-services';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { FileUploadErrorEvent, NodesApiService } from '@alfresco/adf-content-services';
+import { NotificationService } from '@alfresco/adf-core';
 
 @Component({
   selector: 'app-file-view',
@@ -29,10 +12,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class FileViewComponent implements OnInit {
   nodeId: string = null;
 
+  private notificationService = inject(NotificationService);
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private snackBar: MatSnackBar,
     private nodeApiService: NodesApiService
   ) {}
 
@@ -54,8 +38,9 @@ export class FileViewComponent implements OnInit {
     });
   }
 
-  onUploadError(errorMessage: string) {
-    this.snackBar.open(errorMessage, '', { duration: 4000 });
+  onUploadError(event: FileUploadErrorEvent) {
+    const errorMessage = event.error;
+    this.notificationService.showError(errorMessage);
   }
 
   onViewerVisibilityChanged() {
