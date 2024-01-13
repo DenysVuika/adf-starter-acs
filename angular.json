@@ -14,24 +14,9 @@
             "allowedCommonJsDependencies": [
               "minimatch",
               "minimatch-browser",
-              "moment-es6",
               "superagent",
               "event-emitter",
-              "brace-expansion",
-              "d",
-              "chart.js",
-              "moment",
-              "@editorjs/code",
-              "@editorjs/editorjs",
-              "@editorjs/header",
-              "@editorjs/inline-code",
-              "@editorjs/list",
-              "@editorjs/marker",
-              "@editorjs/underline",
-              "@quanzo/change-font-size",
-              "cropperjs",
-              "editorjs-html",
-              "editorjs-text-color-plugin"
+              "cropperjs"
             ],
             "outputPath": "dist",
             "index": "src/index.html",
@@ -79,15 +64,12 @@
               }
             ],
             "styles": [
-              "src/assets/fonts/material-icons/material-icons.css",
-              "src/assets/fonts/muli/muli.css",
               "node_modules/cropperjs/dist/cropper.min.css",
               "src/custom-style.scss"
             ],
             "scripts": [
               "node_modules/pdfjs-dist/build/pdf.js",
-              "node_modules/pdfjs-dist/web/pdf_viewer.js",
-              "node_modules/moment/min/moment.min.js"
+              "node_modules/pdfjs-dist/web/pdf_viewer.js"
             ],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -145,8 +127,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [
               "node_modules/pdfjs-dist/build/pdf.js",
-              "node_modules/pdfjs-dist/web/pdf_viewer.js",
-              "node_modules/moment/min/moment.min.js"
+              "node_modules/pdfjs-dist/web/pdf_viewer.js"
             ],
             "styles": [
               "src/custom-style.scss"
