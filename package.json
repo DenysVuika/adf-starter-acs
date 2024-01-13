@@ -9,6 +9,7 @@
     "build": "ng build app",
     "build:dist": "ng build app --configuration=production",
     "test": "ng test app",
+    "test:ci": "ng test app --no-watch --no-progress --browsers=ChromeHeadless",
     "postinstall": "ngcc"
   },
   "private": true,
