@@ -26,7 +26,7 @@ export class PreviewService {
 
     constructor(private router: Router) {}
 
-    showResource(resourceId): void {
+    showResource(resourceId: string): void {
         this.router.navigate([{ outlets: { overlay: ['files', resourceId, 'view'] } }]);
     }
 

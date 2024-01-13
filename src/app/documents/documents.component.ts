@@ -15,14 +15,17 @@
  * limitations under the License.
  */
 
-import { Component, ViewChild, Input } from '@angular/core';
+import { Component, ViewChild, Input, ViewEncapsulation } from '@angular/core';
 import { NotificationService } from '@alfresco/adf-core';
 import { DocumentListComponent } from '@alfresco/adf-content-services';
 import { PreviewService } from '../services/preview.service';
 
 @Component({
   selector: 'app-documents',
-  templateUrl: './documents.component.html'
+  templateUrl: './documents.component.html',
+  styleUrls: ['./documents.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  host: { class: 'app-documents' }
 })
 export class DocumentsComponent {
 

@@ -11,7 +11,7 @@
   <div class="adf-toolbar--spacer"></div>
 
   <adf-upload-button
-    [rootFolderId]="documentList.currentFolderId || '-root-'"
+    [rootFolderId]="documentList.currentFolderId || '-my-'"
     [adf-check-allowable-operation]="'create'"
     (success)="uploadSuccess()">
   </adf-upload-button>
@@ -19,7 +19,7 @@
 
 <adf-document-list
   #documentList
-  currentFolderId="-root-"
+  currentFolderId="-my-"
   (preview)="showPreview($event)">
 </adf-document-list>
 
