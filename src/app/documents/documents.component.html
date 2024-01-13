@@ -19,7 +19,7 @@
 
 <adf-document-list
   #documentList
-  currentFolderId="-my-"
+  [currentFolderId]="'-my-'"
   [sortingMode]="'client'"
   (preview)="showPreview($event)">
 </adf-document-list>
