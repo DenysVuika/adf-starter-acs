@@ -7,8 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Support for `BASE_URL` command parameter when starting dev server
+
 ### Changed
 
+- Update to ADF `6.4.0` and JS-API `7.1.0`
 - Switch from the `Muli` font to `@fontsource/open-sans`
 - Use NPM package for the default font instead of the local copies
 - Use NPM package for the `material-icons` instead of the local copies
@@ -16,6 +21,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Fix `proxy.conf.js` settings
 - Fix Document List sorting mode not working
 - Fix Viewer metadata panel not displayed
 - Fix Login component bugs
+- Fix Node Comments integration for metadata panel
+- Fix sidebar collapse/expand behavior
