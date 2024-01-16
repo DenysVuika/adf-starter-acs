@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Support for `BASE_URL` command parameter when starting dev server
+- Customize toolbar title with the `app.config.json` file
+- Customize `Login` copyright placeholder with the `app.config.json` file
 
 ### Changed
 
@@ -17,7 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Switch from the `Muli` font to `@fontsource/open-sans`
 - Use NPM package for the default font instead of the local copies
 - Use NPM package for the `material-icons` instead of the local copies
-- Move Login copyright placeholder to the `app.config.json` file
 
 ### Fixed
 

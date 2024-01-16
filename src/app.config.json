@@ -16,7 +16,7 @@
     "redirectUriLogout": "/logout"
   },
   "application": {
-    "name": "Alfresco ADF Application",
+    "name": "My ADF Application",
     "copyright": "© 2024 Your Copyright Text"
   },
   "languages": [
