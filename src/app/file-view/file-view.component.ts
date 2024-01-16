@@ -13,16 +13,14 @@ export class FileViewComponent implements OnInit {
   nodeId: string = null;
 
   private notificationService = inject(NotificationService);
-
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private nodeApiService: NodesApiService
-  ) {}
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
+  private nodeApiService = inject(NodesApiService);
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
       const id = params.nodeId;
+
       if (id) {
         this.nodeApiService.getNode(id).subscribe(
           (node) => {

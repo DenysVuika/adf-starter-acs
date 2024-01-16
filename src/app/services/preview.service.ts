@@ -15,16 +15,15 @@
  * limitations under the License.
  */
 
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class PreviewService {
+    private router = inject(Router);
 
     public content: Blob = null;
     public name: string = null;
-
-    constructor(private router: Router) {}
 
     showResource(resourceId: string): void {
         this.router.navigate([{ outlets: { overlay: ['files', resourceId, 'view'] } }]);

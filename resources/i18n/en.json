@@ -7,5 +7,6 @@
       "VERSIONS": "Versions"
     }
   },
-  "title": "Welcome"
+  "title": "Welcome",
+  "welcome_msg": "Please select a feature in the app menu."
 }
