@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Starter project for ADF and ACS",
   "license": "Apache-2.0",
+  "author": {
+    "name": "Denys Vuika",
+    "email": "denys.vuika@gmail.com",
+    "url": "https://github.com/DenysVuika"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve app --open",
