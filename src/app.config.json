@@ -20,13 +20,7 @@
     "copyright": "© 2024 Your Copyright Text"
   },
   "languages": [
-    {
-      "key": "en",
-      "label": "English"
-    },
-    {
-      "key": "fr",
-      "label": "French"
-    }
+    { "key": "en", "label": "English" },
+    { "key": "es", "label": "Español" }
   ]
 }
