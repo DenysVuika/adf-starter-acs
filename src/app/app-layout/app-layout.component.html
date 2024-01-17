@@ -1,7 +1,12 @@
 <adf-sidenav-layout [sidenavMin]="70" [sidenavMax]="200" [stepOver]="780">
   <adf-sidenav-layout-header>
     <ng-template let-toggleMenu="toggleMenu">
-      <adf-layout-header [title]="'application.name' | adfAppConfig" (clicked)="toggleMenu()"></adf-layout-header>
+      <adf-layout-header
+        [title]="'application.name' | adfAppConfig"
+        [tooltip]="'application.name' | adfAppConfig"
+        [redirectUrl]="'/documents'"
+        (clicked)="toggleMenu()">
+      </adf-layout-header>
     </ng-template>
   </adf-sidenav-layout-header>
 

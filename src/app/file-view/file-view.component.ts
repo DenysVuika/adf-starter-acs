@@ -7,7 +7,7 @@ import { NotificationService } from '@alfresco/adf-core';
   selector: 'app-file-view',
   templateUrl: 'file-view.component.html',
   styleUrls: ['file-view.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
 })
 export class FileViewComponent implements OnInit {
   nodeId: string = null;
@@ -42,9 +42,7 @@ export class FileViewComponent implements OnInit {
   }
 
   onViewerVisibilityChanged() {
-    const primaryUrl = this.router
-      .parseUrl(this.router.url)
-      .root.children[PRIMARY_OUTLET].toString();
+    const primaryUrl = this.router.parseUrl(this.router.url).root.children[PRIMARY_OUTLET].toString();
     this.router.navigateByUrl(primaryUrl);
   }
 }
