@@ -1,6 +1,4 @@
-import { Component, ViewEncapsulation, inject } from '@angular/core';
-import { AuthenticationService } from '@alfresco/adf-core';
-import { Router } from '@angular/router';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +6,4 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent {
-  private authService = inject(AuthenticationService);
-  private router = inject(Router);
-
-  logout() {
-    this.authService.logout().subscribe(() => {
-      this.router.navigate(['/login']);
-    });
-  }
-}
+export class AppComponent {}
