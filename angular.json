@@ -65,7 +65,7 @@
             ],
             "styles": [
               "node_modules/cropperjs/dist/cropper.min.css",
-              "src/custom-style.scss"
+              "src/app.theme.scss"
             ],
             "scripts": [
               "node_modules/pdfjs-dist/build/pdf.js",
@@ -130,7 +130,7 @@
               "node_modules/pdfjs-dist/web/pdf_viewer.js"
             ],
             "styles": [
-              "src/custom-style.scss"
+              "src/app.theme.scss"
             ],
             "assets": [
               "src/assets",
