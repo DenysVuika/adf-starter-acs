@@ -43,6 +43,7 @@ testem.log
 /www
 .env
 .eslintcache
+.nx
 
 # System Files
 .DS_Store
