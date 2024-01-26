@@ -11,6 +11,7 @@ Minimal ready-to-use project template pre-configured with [ADF components](https
   - Document List
   - ACS File Viewer
   - Language menu
+  - Collapsible sidebar
 
 ## Quick start
 
