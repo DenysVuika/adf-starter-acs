@@ -13,7 +13,9 @@
     "silentLogin": true,
     "redirectSilentIframeUri": "{protocol}//{hostname}{:port}/assets/silent-refresh.html",
     "redirectUri": "/",
-    "redirectUriLogout": "/logout"
+    "redirectUriLogout": "/logout",
+    "skipIssuerCheck": true,
+    "strictDiscoveryDocumentValidation": false
   },
   "application": {
     "name": "My ADF Application",

@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CoreModule, TranslateLoaderService, provideTranslations } from '@alfresco/adf-core';
+import { AuthModule, CoreModule, TranslateLoaderService, provideTranslations } from '@alfresco/adf-core';
 import { ContentModule } from '@alfresco/adf-content-services';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { appRoutes } from './app.routes';
@@ -25,6 +25,7 @@ registerLocaleData(localeEs);
         BrowserAnimationsModule,
         RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledNonBlocking', relativeLinkResolution: 'legacy' }),
         // ADF modules
+        AuthModule.forRoot({ useHash: true }),
         CoreModule.forRoot(),
         ContentModule.forRoot(),
         TranslateModule.forRoot({
