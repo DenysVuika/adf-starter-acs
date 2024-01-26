@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [Nx Workspace](https://nx.dev/getting-started/intro) 17.x support
+- [ADF 6.6.0](https://github.com/Alfresco/alfresco-ng2-components/releases/tag/6.6.0) support
 
 ## [1.0.0] - 2024-01-17
 

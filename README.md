@@ -7,9 +7,10 @@ Minimal ready-to-use project template pre-configured with [ADF components](https
 - Simple and clean template to get started with ADF and ACS fast
 - [Nx Workspace](https://nx.dev/getting-started/intro) support
 - [ADF Components](https://github.com/Alfresco/alfresco-ng2-components) pre-configured:
-  - Login Dialog component
-  - Document List component
-  - ACS File Viewer component
+  - Login Dialog
+  - Document List
+  - ACS File Viewer
+  - Language menu
 
 ## Quick start
 
