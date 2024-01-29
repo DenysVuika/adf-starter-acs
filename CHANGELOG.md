@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## Fixed
+
+- Fix PDF rendering
+
 ## Changed
 
-- New simplified Sidenav component
+- New simplified `Sidenav` component
 - `Outlined` material icons font by default (see [material-icons](https://github.com/marella/material-icons))
-- Migrate AppLayout to Standalone component
+- Migrate `AppLayout` to a Standalone Angular component
 
 ## [2.0.0] - 2024-01-26
 
