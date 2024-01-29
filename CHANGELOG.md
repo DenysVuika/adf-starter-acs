@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New simplified `Sidenav` component
 - `Outlined` material icons font by default (see [material-icons](https://github.com/marella/material-icons))
 - Migrate `AppLayout` to a Standalone Angular component
+- Document List: enable column resizing feature by default
 
 ## [2.0.0] - 2024-01-26
 
