@@ -2,7 +2,11 @@
   <ng-template let-node="node" #sidebarTemplate>
     <adf-info-drawer [title]="'APP.INFO_DRAWER.TITLE' | translate">
       <adf-info-drawer-tab [label]="'APP.INFO_DRAWER.PROPERTIES' | translate">
-        <adf-content-metadata-card [node]="node"></adf-content-metadata-card>
+        <adf-content-metadata
+          [node]="node"
+          [displayCategories]="true"
+          [displayTags]="true">
+        </adf-content-metadata>
       </adf-info-drawer-tab>
 
       <adf-info-drawer-tab [label]="'APP.INFO_DRAWER.VERSIONS' | translate">

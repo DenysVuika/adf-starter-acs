@@ -1,9 +1,34 @@
 import { Component, OnInit, ViewEncapsulation, inject } from '@angular/core';
 import { ActivatedRoute, PRIMARY_OUTLET, Router } from '@angular/router';
-import { FileUploadErrorEvent, NodesApiService } from '@alfresco/adf-content-services';
-import { NotificationService } from '@alfresco/adf-core';
+import {
+  AlfrescoViewerModule,
+  ContentMetadataModule,
+  FileUploadErrorEvent,
+  NodeCommentsModule,
+  NodesApiService,
+  VersionManagerModule
+} from '@alfresco/adf-content-services';
+import { InfoDrawerModule, NotificationService, ViewerModule } from '@alfresco/adf-core';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
+  standalone: true,
+  imports: [
+    CommonModule,
+    InfoDrawerModule,
+    TranslateModule,
+    VersionManagerModule,
+    NodeCommentsModule,
+    AlfrescoViewerModule,
+    ViewerModule,
+    ContentMetadataModule,
+    MatIconModule,
+    MatButtonModule
+  ],
   selector: 'app-file-view',
   templateUrl: 'file-view.component.html',
   styleUrls: ['file-view.component.scss'],

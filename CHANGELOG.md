@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Fixed
 
 - Fix PDF rendering in the `Viewer` component
+- Fix Metadata Panel in the Viewer, enable Tags and Categories features
 
 ## Changed
 

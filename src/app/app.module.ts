@@ -7,7 +7,6 @@ import { AuthModule, CoreModule, TranslateLoaderService, provideTranslations } f
 import { ContentModule } from '@alfresco/adf-content-services';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { appRoutes } from './app.routes';
-import { FileViewComponent } from './file-view/file-view.component';
 import { AppComponent } from './app.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { AppLayoutComponent } from './app-layout/app-layout.component';
@@ -30,7 +29,7 @@ registerLocaleData(localeEs);
     AppLayoutComponent,
     DocumentsComponent
   ],
-  declarations: [AppComponent, FileViewComponent],
+  declarations: [AppComponent],
   providers: [provideTranslations('app', 'resources')],
   bootstrap: [AppComponent]
 })
