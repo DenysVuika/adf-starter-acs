@@ -1,4 +1,4 @@
-import { AppConfigModule, LanguageMenuModule } from '@alfresco/adf-core';
+import { AppConfigModule, DirectiveModule, LanguageMenuModule } from '@alfresco/adf-core';
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
@@ -20,7 +20,8 @@ import { TranslateModule } from '@ngx-translate/core';
     RouterModule,
     LanguageMenuModule,
     TranslateModule,
-    AppConfigModule
+    AppConfigModule,
+    DirectiveModule
   ],
   templateUrl: './app-layout.component.html',
   styleUrls: ['./app-layout.component.scss']
