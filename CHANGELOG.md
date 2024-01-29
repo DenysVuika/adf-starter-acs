@@ -9,14 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Fixed
 
-- Fix PDF rendering
+- Fix PDF rendering in the `Viewer` component
 
 ## Changed
 
 - New simplified `Sidenav` component
 - `Outlined` material icons font by default (see [material-icons](https://github.com/marella/material-icons))
-- Migrate `AppLayout` to a Standalone Angular component
-- Document List: enable column resizing feature by default
+- Migrate `AppLayout` component to a Standalone Angular component
+- Migrate `Documents` component to a Standalone Angular component
+- `Documents`: enable column resizing feature by default
 
 ## [2.0.0] - 2024-01-26
 
@@ -41,7 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Switch from the `Muli` font to `@fontsource/open-sans`
 - Use NPM package for the default font instead of the local copies
 - Use NPM package for the `material-icons` instead of the local copies (see [material-icons](https://github.com/marella/material-icons))
-- Move Logout to the application toolbar
+- Move `Logout` to the application toolbar
 - Cleanup code and project files
 
 ### Fixed

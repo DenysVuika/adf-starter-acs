@@ -31,9 +31,10 @@ registerLocaleData(localeEs);
     TranslateModule.forRoot({
       loader: { provide: TranslateLoader, useClass: TranslateLoaderService }
     }),
-    AppLayoutComponent
+    AppLayoutComponent,
+    DocumentsComponent
   ],
-  declarations: [AppComponent, HomeComponent, LoginComponent, DocumentsComponent, FileViewComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent, FileViewComponent],
   providers: [provideTranslations('app', 'resources')],
   bootstrap: [AppComponent]
 })
