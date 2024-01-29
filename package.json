@@ -54,7 +54,7 @@
     "@angular/compiler-cli": "^14.2.9",
     "@nx/angular": "17.0.3",
     "@nx/workspace": "17.3.0",
-    "@schematics/angular": "^14.2.13",
+    "@schematics/angular": "^17.1.1",
     "@types/jasmine": "~5.1.4",
     "@types/jasminewd2": "~2.0.2",
     "@types/minimatch": "^3.0.3",
