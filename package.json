@@ -39,7 +39,7 @@
     "cropperjs": "1.5.12",
     "date-fns": "^2.30.0",
     "material-icons": "^1.13.8",
-    "minimatch": "^3.0.4",
+    "minimatch": "^9.0.3",
     "minimatch-browser": "1.0.0",
     "pdfjs-dist": "3.3.122",
     "rxjs": "^6.6.3",
