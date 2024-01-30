@@ -9,7 +9,7 @@
       "options": {
         "allowedCommonJsDependencies": [
           "minimatch",
-          "minimatch-browser",
+          "brace-expansion",
           "superagent",
           "event-emitter",
           "cropperjs"
