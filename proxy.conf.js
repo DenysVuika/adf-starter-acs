@@ -1,10 +1,11 @@
 const BASE_URL = process.env.BASE_URL || 'http://localhost:8080';
-
+const IDENTITY_SERVICE_URL = process.env.IDENTITY_SERVICE_URL || 'http://localhost:3000';
+console.log(IDENTITY_SERVICE_URL);
 module.exports = {
   '/alfresco': {
     target: BASE_URL,
     pathRewrite: {
-      '^/alfresco/alfresco': '',
+      '^/alfresco/alfresco': ''
     },
     secure: false,
     changeOrigin: true,
@@ -19,6 +20,12 @@ module.exports = {
       if (header?.startsWith('Basic')) {
         proxyRes.headers['www-authenticate'] = 'x' + header;
       }
-    },
+    }
   },
+  '/auth': {
+    target: IDENTITY_SERVICE_URL,
+    secure: false,
+    logLevel: 'debug',
+    changeOrigin: 'true'
+  }
 };
