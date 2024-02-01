@@ -35,6 +35,10 @@ BASE_URL="https://your.alfresco.backend.com" npm start
 The template provides certain proxy settings to allow running web application locally without CORS setup.
 You can find details in the `proxy.conf.js` file.
 
+#### OAuth2 configuration
+
+When you need to connect via OIDC/OAuth2, change the authorization type to OAuth `"authType": "OAUTH"` in `app.config.json` file and set the `IDENTITY_SERVICE_URL` environment variable.
+
 ## Prerequisites
 
 ### Installing Node.js and NPM

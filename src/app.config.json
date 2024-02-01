@@ -2,7 +2,7 @@
   "$schema": "../node_modules/@alfresco/adf-core/app.config.schema.json",
   "ecmHost": "{protocol}//{hostname}{:port}",
   "providers": "ECM",
-  "authType": "BASIC",
+  "authType": "OAUTH",
   "identityHost": "{protocol}//{hostname}{:port}/auth/realms/alfresco",
   "oauth2": {
     "host": "{protocol}//{hostname}{:port}/auth/realms/alfresco",
