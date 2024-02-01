@@ -37,7 +37,20 @@ You can find details in the `proxy.conf.js` file.
 
 #### OAuth2 configuration
 
-When you need to connect via OIDC/OAuth2, change the authorization type to OAuth `"authType": "OAUTH"` in `app.config.json` file and set the `IDENTITY_SERVICE_URL` environment variable.
+When you need to connect via OIDC/OAuth2, change the authorization type to OAuth `"authType": "OAUTH"` in `app.config.json` file, 
+and optionally set the `IDENTITY_SERVICE_URL` environment variable.
+
+> The `IDENTITY_SERVICE_URL` value defaults to the `BASE_URL`, and falls back to the `http://localhost:3000`.
+
+Examples:
+
+```sh
+# Using same URL for everything
+BASE_URL="https://my.alfresco.backend.com" npm start
+
+# Using custom URL for OAUTH
+BASE_URL="https://my.alfresco.backend.com" IDENTITY_SERVICE_URL="https://my.auth.com/auth" npm start
+```
 
 ## Prerequisites
 

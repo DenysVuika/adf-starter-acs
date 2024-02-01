@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Fixed
+
+- Fix missing hash in the routes
+
 ### Added
 
 - Configuration required for `OIDC` authentication ([#26](https://github.com/DenysVuika/adf-starter-acs/pull/26) by [vprovaggi](https://github.com/vprovaggi))

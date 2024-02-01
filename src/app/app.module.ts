@@ -19,7 +19,7 @@ registerLocaleData(localeEs);
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { useHash: true }),
     AuthModule.forRoot({ useHash: true }),
     CoreModule.forRoot(),
     ContentModule.forRoot(),
