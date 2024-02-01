@@ -1,6 +1,10 @@
 const BASE_URL = process.env.BASE_URL || 'http://localhost:8080';
 const IDENTITY_SERVICE_URL = process.env.IDENTITY_SERVICE_URL || 'http://localhost:3000';
-console.log(IDENTITY_SERVICE_URL);
+
+console.info(`ACS URL: ${BASE_URL}`);
+console.info(`IDENTITY URL: ${IDENTITY_SERVICE_URL}`);
+
+
 module.exports = {
   '/alfresco': {
     target: BASE_URL,
