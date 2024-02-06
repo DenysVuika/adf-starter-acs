@@ -1,16 +1,6 @@
 <div class="page-content">
-  <app-header class="page-header" (toggleSidebar)="sidenav.toggle()"></app-header>
-
-  <mat-sidenav-container class="page-container">
-    <mat-sidenav #sidenav mode="side" opened="false" class="page-sidenav">
-      <mat-nav-list>
-        <a mat-list-item routerLink="/documents">
-          <mat-icon matListIcon>text_snippet</mat-icon>
-          <div>{{ 'APP.NAV.DOCUMENTS' | translate }}</div>
-        </a>
-      </mat-nav-list>
-    </mat-sidenav>
-
+  <app-header class="page-header" (toggleSidebar)="sidebar.toggle()"></app-header>
+  <app-sidebar #sidebar>
     <router-outlet></router-outlet>
-  </mat-sidenav-container>
+  </app-sidebar>
 </div>
