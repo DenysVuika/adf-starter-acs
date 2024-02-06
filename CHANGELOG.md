@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Setup ESLint for the project and CI/CD
 - Separate `sidebar` component (`src/app/components/sidebar`)
 - Separate `header` component (`src/app/components/header`)
 - New `page-layout` component (`src/app/components/page-layout`)

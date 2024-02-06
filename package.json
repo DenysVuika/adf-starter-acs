@@ -13,7 +13,8 @@
     "build": "nx build app",
     "build:dist": "nx build app --configuration=production",
     "test": "nx test app",
-    "test:ci": "nx test app --no-watch --no-progress --browsers=ChromeHeadless"
+    "test:ci": "nx test app --no-watch --no-progress --browsers=ChromeHeadless",
+    "lint": "nx lint app"
   },
   "private": true,
   "dependencies": {
@@ -49,8 +50,13 @@
     "@angular-devkit/build-angular": "^14.2.13",
     "@angular-devkit/core": "^14.2.9",
     "@angular-devkit/schematics": "^14.2.13",
+    "@angular-eslint/eslint-plugin": "~16.0.0",
+    "@angular-eslint/eslint-plugin-template": "~16.0.0",
+    "@angular-eslint/template-parser": "~16.0.0",
     "@angular/cli": "^14.2.13",
     "@angular/compiler-cli": "^14.2.9",
+    "@nx/eslint": "17.0.3",
+    "@nx/eslint-plugin": "17.0.3",
     "@nx/angular": "17.0.3",
     "@nx/workspace": "17.3.0",
     "@schematics/angular": "^14.2.13",
@@ -58,6 +64,10 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/minimatch": "^5.1.2",
     "@types/node": "^20.11.2",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint": "~8.46.0",
+    "eslint-config-prettier": "^9.0.0",
     "jasmine-core": "~4.5.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "^6.3.6",
@@ -67,7 +77,9 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "karma-mocha-reporter": "^2.2.5",
     "ng-packagr": "^14.2.2",
+    "jsonc-eslint-parser": "^2.1.0",
     "nx": "17.0.3",
+    "prettier": "^2.6.2",
     "typescript": "4.6.4"
   }
 }

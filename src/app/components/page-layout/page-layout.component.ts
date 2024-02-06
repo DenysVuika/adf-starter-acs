@@ -4,7 +4,7 @@ import { AppHeaderComponent } from '../header/header.component';
 import { AppSidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
-  selector: 'page-layout',
+  selector: 'app-page-layout',
   standalone: true,
   imports: [
     RouterModule,

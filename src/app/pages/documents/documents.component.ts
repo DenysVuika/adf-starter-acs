@@ -9,8 +9,7 @@ import { PreviewService } from '../../services/preview.service';
   imports: [ToolbarModule, BreadcrumbModule, UploadModule, DocumentListModule, PaginationModule, ContentDirectiveModule],
   templateUrl: './documents.component.html',
   styleUrls: ['./documents.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  host: { class: 'app-documents' }
+  encapsulation: ViewEncapsulation.None
 })
 export class DocumentsComponent {
   private notificationService = inject(NotificationService);
