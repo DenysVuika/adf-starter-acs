@@ -10,7 +10,7 @@ Minimal ready-to-use project template pre-configured with [ADF components](https
 - [ADF Components](https://github.com/Alfresco/alfresco-ng2-components) pre-configured:
   - Login Dialog
   - Document List
-  - ACS File Viewer
+  - File Viewer
   - Language menu
   - Collapsible sidebar
 
@@ -86,5 +86,11 @@ sudo yum install gcc-c++ make
 
 ## Build
 
-Run `ng build` to build the project.  
-The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `npm run build` to build the project.  
+The build artifacts will be stored in the `dist/` directory.
+
+Use the `npm run build:prod` for a production build.
+
+## Linting
+
+Run `npm run lint` to lint the project.

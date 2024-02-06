@@ -11,7 +11,7 @@
   "scripts": {
     "start": "nx serve app --open",
     "build": "nx build app",
-    "build:dist": "nx build app --configuration=production",
+    "build:prod": "nx build app --configuration=production",
     "test": "nx test app",
     "test:ci": "nx test app --no-watch --no-progress --browsers=ChromeHeadless",
     "lint": "nx lint app"
