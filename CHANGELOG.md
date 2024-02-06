@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Improved and simplified project layout
 - Move i18n resources to the `src/assets/i18n`
+- Move `documents` and `home` components to `src/app/pages`
 
 ## [2.2.0] - 2024-02-05
 

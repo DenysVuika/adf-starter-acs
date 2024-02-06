@@ -1,7 +1,7 @@
 import { Component, ViewChild, Input, ViewEncapsulation, inject } from '@angular/core';
 import { NotificationService, PaginationModule, ToolbarModule } from '@alfresco/adf-core';
 import { BreadcrumbModule, ContentDirectiveModule, DocumentListComponent, DocumentListModule, UploadModule } from '@alfresco/adf-content-services';
-import { PreviewService } from '../services/preview.service';
+import { PreviewService } from '../../services/preview.service';
 
 @Component({
   selector: 'app-documents',

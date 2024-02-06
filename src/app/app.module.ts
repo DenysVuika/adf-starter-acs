@@ -8,7 +8,7 @@ import { ContentModule } from '@alfresco/adf-content-services';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
-import { DocumentsComponent } from './documents/documents.component';
+import { DocumentsComponent } from './pages/documents/documents.component';
 import { AppLayoutComponent } from './app-layout/app-layout.component';
 
 import { registerLocaleData } from '@angular/common';
