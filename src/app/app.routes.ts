@@ -3,7 +3,7 @@ import { AuthGuardEcm } from '@alfresco/adf-core';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
-import { AppLayoutComponent } from './components/app-layout/app-layout.component';
+import { AppLayoutComponent } from './components/page-layout/page-layout.component';
 import { FileViewComponent } from './components/file-view/file-view.component';
 
 export const appRoutes: Routes = [
