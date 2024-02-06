@@ -30,8 +30,8 @@
           "src/app.config.json",
           {
             "glob": "**/*",
-            "input": "resources",
-            "output": "/resources"
+            "input": "src/assets",
+            "output": "/assets"
           },
           {
             "glob": "**/*",
@@ -127,8 +127,8 @@
           "src/app.config.json",
           {
             "glob": "**/*",
-            "input": "resources",
-            "output": "/resources"
+            "input": "src/assets",
+            "output": "/assets"
           },
           {
             "glob": "**/*",

@@ -30,7 +30,7 @@ registerLocaleData(localeEs);
     DocumentsComponent
   ],
   declarations: [AppComponent],
-  providers: [provideTranslations('app', 'resources')],
+  providers: [provideTranslations('app', 'assets')],
   bootstrap: [AppComponent]
 })
 export class AppModule {
