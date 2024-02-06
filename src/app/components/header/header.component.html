@@ -1,0 +1,20 @@
+<mat-toolbar>
+  <button mat-icon-button (click)="toggleSidebar.emit()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div>{{ 'application.name' | adfAppConfig }}</div>
+
+  <div class="app-toolbar-spacer"></div>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <adf-picker-button></adf-picker-button>
+    <button mat-menu-item adf-logout>
+      <mat-icon>logout</mat-icon>
+      <span>{{ 'APP.LOGOUT' | translate }}</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
