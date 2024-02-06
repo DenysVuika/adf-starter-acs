@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+
+- Separate `sidebar` component (`src/app/components/sidebar`)
+- Separate `header` component (`src/app/components/header`)
+- New `page-layout` component (`src/app/components/page-layout`)
+
 ### Changed
 
-- Improved and simplified project layout
+- Improved and simplified overall project structure
 - Move i18n resources to the `src/assets/i18n`
 - Move `documents` and `home` components to `src/app/pages`
 
