@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
 import { AuthGuardEcm } from '@alfresco/adf-core';
 import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
-import { AppLayoutComponent } from './app-layout/app-layout.component';
-import { FileViewComponent } from './file-view/file-view.component';
+import { AppLayoutComponent } from './components/app-layout/app-layout.component';
+import { FileViewComponent } from './components/file-view/file-view.component';
 
 export const appRoutes: Routes = [
   { path: 'files/:nodeId/view', component: FileViewComponent, canActivate: [AuthGuardEcm], outlet: 'overlay' },

@@ -9,7 +9,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
-import { AppLayoutComponent } from './app-layout/app-layout.component';
+import { AppLayoutComponent } from './components/app-layout/app-layout.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
