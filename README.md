@@ -55,6 +55,17 @@ BASE_URL="https://my.alfresco.backend.com" npm start
 BASE_URL="https://my.alfresco.backend.com" IDENTITY_SERVICE_URL="https://my.auth.com/auth" npm start
 ```
 
+## Customizing Application
+
+The recommended configuration entry points are as following:
+
+- `src/app/app.menu.ts` - custom application menu entries
+- `src/app/app.sidebar.ts` - custom navigation sidebar entries
+- `src/app/app.routes.ts` - application routes
+- `src/app/pages/*` - main content pages, add your components here or modify the existing examples
+- `src/app.config.json` - main configuration file for ADF components
+- `src/app.theme.scss` - application theme
+
 ## Prerequisites
 
 ### Installing Node.js and NPM
