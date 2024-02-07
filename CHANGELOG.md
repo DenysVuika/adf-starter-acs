@@ -10,9 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Setup ESLint for the project and CI/CD
-- Separate `sidebar` component (`src/app/components/sidebar`)
-- Separate `header` component (`src/app/components/header`)
+- Separate `sidebar` component (`src/app/components/sidebar`) with configuration options via `app.sidebar.ts`
+- Separate `header` component (`src/app/components/header`) with configuration options via `app.menu.ts`
 - New `page-layout` component (`src/app/components/page-layout`)
+- Content Page examples with integration to sidebar and app menu
 
 ### Changed
 
