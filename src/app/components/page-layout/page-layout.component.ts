@@ -3,7 +3,8 @@ import { RouterModule } from '@angular/router';
 import { AppHeaderComponent } from '../header/header.component';
 import { AppSidebarComponent } from '../sidebar/sidebar.component';
 import { appSidebarEntries } from '../../app.sidebar';
-import { SidebarEntry } from '../../types';
+import { AppMenuEntry, SidebarEntry } from '../../types';
+import { appMenuEntries } from '../../app.menu';
 
 @Component({
   selector: 'app-page-layout',
@@ -18,5 +19,6 @@ import { SidebarEntry } from '../../types';
   encapsulation: ViewEncapsulation.None
 })
 export class AppLayoutComponent {
-  entries: Array<SidebarEntry> = [...appSidebarEntries];
+  menuEntries: Array<AppMenuEntry> = [...appMenuEntries];
+  sidebarEntries: Array<SidebarEntry> = [...appSidebarEntries];
 }

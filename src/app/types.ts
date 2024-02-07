@@ -7,5 +7,4 @@ export interface SidebarEntry {
 export interface AppMenuEntry {
   text: string;
   path: string;
-  icon: string;
 }
