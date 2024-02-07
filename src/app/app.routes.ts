@@ -5,6 +5,8 @@ import { LoginComponent } from './components/login/login.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { AppLayoutComponent } from './components/page-layout/page-layout.component';
 import { FileViewComponent } from './components/file-view/file-view.component';
+import { Page1Component } from './pages/page1/page1.component';
+import { Page2Component } from './pages/page2/page2.component';
 
 export const appRoutes: Routes = [
   { path: 'files/:nodeId/view', component: FileViewComponent, canActivate: [AuthGuardEcm], outlet: 'overlay' },
@@ -24,6 +26,14 @@ export const appRoutes: Routes = [
         path: 'documents',
         component: DocumentsComponent,
         canActivate: [AuthGuardEcm]
+      },
+      {
+        path: 'page1',
+        component: Page1Component
+      },
+      {
+        path: 'page2',
+        component: Page2Component
       }
     ]
   },
