@@ -7,7 +7,7 @@ To generate a library, you can use Nx Console for the VS Code or IntelliJ:
 
 ![Library Nx UI](./images/library-nx-ui.png)
 
-To create a minimal library, use the following options:
+To create a minimal library called `documents-plugin`, use the following options:
 
 - **name**: `documents-plugin`
 - **buildable**: `true`
