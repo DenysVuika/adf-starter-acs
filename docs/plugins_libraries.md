@@ -10,14 +10,15 @@ To generate a library, you can use Nx Console for the VS Code or IntelliJ:
 To create a minimal library, use the following options:
 
 - **name**: `documents-plugin`
+- **buildable**: `true`
 - **directory**: `plugins/documents-plugin`
 - **lazy**: `true`
 - **parent**: `src/app/app.routes.ts`
 - **routing**: `true`
-- **skipTests**: `true`
+- **skipTests** (optional): `true`
 - **standalone**: `true`
-- **strict**: `true`
-- **unitTestRunner**: `none`
+- **strict** (optional): `true`
+- **unitTestRunner** (optional): `none`
 
 Alternatively, execute the following from the command line:
 
