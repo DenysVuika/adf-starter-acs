@@ -2,7 +2,7 @@
 
 The recommended configuration entry points are as following:
 
-- `src/app/app.menu.ts` - custom application menu entries
+- `src/app/app.header.ts` - custom application menu entries
 - `src/app/app.sidebar.ts` - custom navigation sidebar entries
 - `src/app/app.routes.ts` - application routes
 - `src/app/pages/*` - main content pages, add your components here or modify the existing examples
@@ -18,7 +18,7 @@ You can use Nx schematics to generate a standalone Angular component:
 Alternatively, the command-line equivalent should look like the following:
 
 ```sh
-npx nx generate @nx/angular:component --name=my-page --directory=src/app/pages/my-page --standalone=true --nameAndDirectoryFormat=as-provided --no-interactive 
+npx nx generate @nx/angular:component --name=my-page --directory=src/app/pages/my-page --standalone=true --nameAndDirectoryFormat=as-provided --no-interactive
 
 
 >  NX  Generating @nx/angular:component
@@ -51,7 +51,9 @@ export const appRoutes: Routes = [
 Update the `src/app/app.sidebar.ts` file, to provide a custom Sidebar entry:
 
 ```ts
-export const appSidebarEntries: Array<SidebarEntry> = [
+import { AppSidebarEntry } from '@app/sdk';
+
+export const appSidebarEntries: Array<AppSidebarEntry> = [
   // ...
   {
     text: 'My Page',
@@ -65,12 +67,14 @@ At the runtime, it gives the following result:
 
 ![Custom Sidebar Entry](./images//custom-sidebar-entry.png)
 
-## Displaying a Route in the Application Menu
+## Displaying a Route in the Application Header
 
-Update the `src/app/app.menu.ts` file, to provide a custom Application Menu entry:
+Update the `src/app/app.header.ts` file, to provide a custom Application Header entry:
 
 ```ts
-export const appMenuEntries: Array<AppMenuEntry> = [
+import { AppHeaderEntry } from '@app/sdk';
+
+export const appHeaderEntries: Array<AppHeaderEntry> = [
   // ...
   {
     text: 'My Page',

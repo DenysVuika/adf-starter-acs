@@ -6,3 +6,4 @@
 - [Customizing](./customizing.md)
 - [Plugins](./plugins.md)
   - [Plugin Libraries](./plugins_libraries.md)
+  - [Plugin SDK](./plugin_sdk.md)

@@ -1,9 +1,7 @@
 <mat-sidenav-container class="page-container">
   <mat-sidenav #sidenav mode="side" opened="false" class="page-sidenav">
     <mat-nav-list>
-      <a *ngFor="let entry of entries"
-        mat-list-item
-        [routerLink]="entry.path">
+      <a *ngFor="let entry of entries" mat-list-item [routerLink]="entry.path">
         <mat-icon matListIcon>{{ entry.icon }}</mat-icon>
         <div>{{ entry.text | translate }}</div>
       </a>

@@ -1,24 +1,21 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppHeaderComponent } from '../header/header.component';
 import { AppSidebarComponent } from '../sidebar/sidebar.component';
-import { appSidebarEntries } from '../../app.sidebar';
-import { AppMenuEntry, SidebarEntry } from '../../types';
-import { appMenuEntries } from '../../app.menu';
+import { NavigationService } from '@app/sdk';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-page-layout',
   standalone: true,
-  imports: [
-    RouterModule,
-    AppHeaderComponent,
-    AppSidebarComponent
-  ],
+  imports: [CommonModule, RouterModule, AppHeaderComponent, AppSidebarComponent],
   templateUrl: './page-layout.component.html',
   styleUrls: ['./page-layout.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class AppLayoutComponent {
-  menuEntries: Array<AppMenuEntry> = [...appMenuEntries];
-  sidebarEntries: Array<SidebarEntry> = [...appSidebarEntries];
+  private navigationService = inject(NavigationService);
+
+  sidebarEntries$ = this.navigationService.sidebarEntries$;
+  headerEntries$ = this.navigationService.headerEntries$;
 }

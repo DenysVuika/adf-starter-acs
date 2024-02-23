@@ -1,10 +1,11 @@
-import { SidebarEntry } from './types';
+import { AppSidebarEntry } from '@app/sdk';
 
-export const appSidebarEntries: Array<SidebarEntry> = [
+/** Default global application sidebar entries */
+export const appSidebarEntries: Array<AppSidebarEntry> = [
   {
     text: 'APP.NAV.DOCUMENTS',
     path: '/documents',
-    icon: 'text_snippet',
+    icon: 'text_snippet'
   },
   {
     text: 'Page 1',

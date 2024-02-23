@@ -1,6 +1,7 @@
-import { AppMenuEntry } from './types';
+import { AppHeaderEntry } from '@app/sdk';
 
-export const appMenuEntries: Array<AppMenuEntry> = [
+/** Default global application header entries */
+export const appHeaderEntries: Array<AppHeaderEntry> = [
   {
     text: 'APP.NAV.DOCUMENTS',
     path: '/documents'
