@@ -42,7 +42,7 @@ You can find details in the `proxy.conf.js` file.
 
 #### OAuth2 configuration
 
-When you need to connect via OIDC/OAuth2, change the authorization type to OAuth `"authType": "OAUTH"` in `app.config.json` file, 
+When you need to connect via OIDC/OAuth2, change the authorization type to OAuth `"authType": "OAUTH"` in `app.config.json` file,
 and optionally set the `IDENTITY_SERVICE_URL` environment variable.
 
 > The `IDENTITY_SERVICE_URL` value defaults to the `BASE_URL`, and falls back to the `http://localhost:3000`.
@@ -56,17 +56,6 @@ BASE_URL="https://my.alfresco.backend.com" npm start
 # Using custom URL for OAUTH
 BASE_URL="https://my.alfresco.backend.com" IDENTITY_SERVICE_URL="https://my.auth.com/auth" npm start
 ```
-
-## Customizing Application
-
-The recommended configuration entry points are as following:
-
-- `src/app/app.menu.ts` - custom application menu entries
-- `src/app/app.sidebar.ts` - custom navigation sidebar entries
-- `src/app/app.routes.ts` - application routes
-- `src/app/pages/*` - main content pages, add your components here or modify the existing examples
-- `src/app.config.json` - main configuration file for ADF components
-- `src/app.theme.scss` - application theme
 
 ## Build
 

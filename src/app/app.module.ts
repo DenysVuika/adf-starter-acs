@@ -15,6 +15,10 @@ import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 registerLocaleData(localeEs);
 
+import { provideSidebarEntries, provideHeaderEntries } from '@app/sdk';
+import { appSidebarEntries } from './app.sidebar';
+import { appHeaderEntries } from './app.header';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -30,7 +34,7 @@ registerLocaleData(localeEs);
     DocumentsComponent
   ],
   declarations: [AppComponent],
-  providers: [provideTranslations('app', 'assets')],
+  providers: [provideTranslations('app', 'assets'), provideHeaderEntries(appHeaderEntries), provideSidebarEntries(appSidebarEntries)],
   bootstrap: [AppComponent]
 })
 export class AppModule {

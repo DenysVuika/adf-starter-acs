@@ -4,9 +4,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TranslateModule } from '@ngx-translate/core';
-import { AppMenuEntry } from '../../types';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { AppHeaderEntry } from '@app/sdk';
 
 @Component({
   selector: 'app-header',
@@ -28,7 +28,7 @@ import { RouterModule } from '@angular/router';
 })
 export class AppHeaderComponent {
   @Input()
-  entries: Array<AppMenuEntry> = [];
+  entries: Array<AppHeaderEntry> = [];
 
   @Output()
   toggleSidebar = new EventEmitter<void>();

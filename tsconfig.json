@@ -1,29 +1,14 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": ".",
     "outDir": "./dist/out-tsc",
-    "baseUrl": ".",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "skipLibCheck": true,
     "noUnusedLocals": false,
-    "target": "es2020",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2020",
-      "dom"
-    ],
-    "module": "esnext"
+    "typeRoots": ["node_modules/@types"]
   },
   "angularCompilerOptions": {
     "preserveWhitespaces": false,
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true,
     "strictTemplates": true
-  }
+  },
+  "extends": "./tsconfig.base.json"
 }

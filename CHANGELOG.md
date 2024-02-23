@@ -10,10 +10,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - new documentation content on customization and plugin libraries
+- New `@app/sdk` library for plugin development
+- Dynamically composing Header and Sidebar entries
 
 ### Changed
 
 - improved TypeScript configuration to allow easy plugin library generation
+- rename `src/app/app.menu.ts` to `src/app/app.header.ts`
 
 ## [2.3.0] - 2024-02-12
 

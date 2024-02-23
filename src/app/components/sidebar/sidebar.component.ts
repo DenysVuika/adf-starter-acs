@@ -5,7 +5,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { SidebarEntry } from '../../types';
+import { AppSidebarEntry } from '@app/sdk';
 
 @Component({
   selector: 'app-sidebar',
@@ -19,7 +19,7 @@ export class AppSidebarComponent {
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
   @Input()
-  entries: Array<SidebarEntry> = [];
+  entries: Array<AppSidebarEntry> = [];
 
   toggle() {
     this.sidenav.toggle();
