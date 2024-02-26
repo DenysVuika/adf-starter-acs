@@ -7,5 +7,6 @@
 - [Plugins](./plugins.md)
   - [Plugin Libraries](./plugins_libraries.md)
   - [Plugin SDK](./plugin_sdk.md)
+  - [Distributing Plugins](./plugins_distributing.md)
 - [Tutorials](./tutorials.md)
   - [Trashcan Plugin](./tutorials_trashcan.md)

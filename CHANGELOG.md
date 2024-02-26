@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - new `@app/sdk` library for plugin development
 - Dynamically composing Header and Sidebar entries
 - new 'Trashcan Plugin' tutorial with final plugin implementation
+- new 'Distributing Plugins' chapter
 
 ### Changed
 
