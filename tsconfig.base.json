@@ -12,7 +12,8 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@app/sdk": ["plugins/sdk/src/index.ts"]
+      "@app/sdk": ["plugins/sdk/src/index.ts"],
+      "trashcan-plugin": ["plugins/trashcan-plugin/src/index.ts"]
     }
   }
 }

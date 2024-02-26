@@ -1,0 +1,33 @@
+{
+  "name": "trashcan-plugin",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "plugins/trashcan-plugin/src",
+  "prefix": "lib",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "plugins/trashcan-plugin/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "plugins/trashcan-plugin/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "plugins/trashcan-plugin/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["plugins/trashcan-plugin/**/*.ts", "plugins/trashcan-plugin/**/*.html", "plugins/trashcan-plugin/package.json"]
+      }
+    }
+  }
+}
