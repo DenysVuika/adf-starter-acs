@@ -55,6 +55,8 @@ import { NgModule } from '@angular/core';
 export class TrashcanPluginModule {}
 ```
 
+> For the complete list of the supported icons, please refer to the [Google Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons).
+
 Next, update the `plugins/trashcan-plugin/src/index.ts` to export the newly created module:
 
 ```ts
