@@ -37,7 +37,11 @@ export const appRoutes: Routes = [
         path: 'page2',
         component: Page2Component
       },
-      { path: 'trashcan', children: trashcanPluginRoutes }
+      {
+        path: 'trashcan',
+        children: trashcanPluginRoutes,
+        canActivate: [AuthGuardEcm]
+      }
     ]
   },
   {
