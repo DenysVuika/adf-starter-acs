@@ -1,0 +1,11 @@
+lib-trashcan-plugin {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+adf-document-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

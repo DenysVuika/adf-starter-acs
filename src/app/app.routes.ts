@@ -7,6 +7,7 @@ import { AppLayoutComponent } from './components/page-layout/page-layout.compone
 import { FileViewComponent } from './components/file-view/file-view.component';
 import { Page1Component } from './pages/page1/page1.component';
 import { Page2Component } from './pages/page2/page2.component';
+import { trashcanPluginRoutes } from 'trashcan-plugin';
 
 /** Global application routes */
 export const appRoutes: Routes = [
@@ -35,6 +36,11 @@ export const appRoutes: Routes = [
       {
         path: 'page2',
         component: Page2Component
+      },
+      {
+        path: 'trashcan',
+        children: trashcanPluginRoutes,
+        canActivate: [AuthGuardEcm]
       }
     ]
   },
