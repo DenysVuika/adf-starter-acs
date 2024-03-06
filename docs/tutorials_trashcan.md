@@ -66,6 +66,21 @@ Given that the Trashcan data requires authentication, you need to provide the `A
 }
 ```
 
+Next, update the `Sidebar` settings in the `src/app/app.sidebar.ts` file
+
+```ts
+/** Default global application sidebar entries */
+export const appSidebarEntries: Array<AppSidebarEntry> = [
+  // Trashcan Plugin
+  {
+    text: 'Trashcan',
+    path: '/trashcan',
+    icon: 'delete'
+  }
+  // ...
+];
+```
+
 If you run the application at this point, you should see the "Trashcan" entry in the Sidebar.
 The link navigates you to the main content of the plugin:
 
