@@ -16,7 +16,6 @@ import localeEs from '@angular/common/locales/es';
 registerLocaleData(localeEs);
 
 import { provideSidebarEntries, provideHeaderEntries } from '@app/sdk';
-import { TrashcanPluginModule } from 'trashcan-plugin';
 import { appSidebarEntries } from './app.sidebar';
 import { appHeaderEntries } from './app.header';
 
@@ -32,8 +31,7 @@ import { appHeaderEntries } from './app.header';
       loader: { provide: TranslateLoader, useClass: TranslateLoaderService }
     }),
     AppLayoutComponent,
-    DocumentsComponent,
-    TrashcanPluginModule
+    DocumentsComponent
   ],
   declarations: [AppComponent],
   providers: [provideTranslations('app', 'assets'), provideHeaderEntries(appHeaderEntries), provideSidebarEntries(appSidebarEntries)],

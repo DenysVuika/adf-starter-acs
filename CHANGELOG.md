@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - new documentation content on customization and plugin libraries
-- new `@app/sdk` library for plugin development
+- new `@app/sdk` library for plugin development (experimental)
 - Dynamically composing Header and Sidebar entries
 - new 'Trashcan Plugin' tutorial with final plugin implementation
 - new 'Distributing Plugins' chapter

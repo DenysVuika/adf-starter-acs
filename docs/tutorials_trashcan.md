@@ -21,40 +21,6 @@ npx nx generate @nx/angular:library \
   --no-interactive
 ```
 
-### Creating Plugin Module
-
-In this tutorial, we are going to create a self-registering plugin - the library provides the navigation settings dynamically at application startup.
-
-Create the `trashcan-plugin.module.ts` in the `plugins/trashcan-plugin/src/lib/trashcan-plugin/` directory,
-with the next content:
-
-```ts
-import { NgModule } from '@angular/core';
-
-@NgModule({})
-export class TrashcanPluginModule {}
-```
-
-Use `provideSidebarEntries` helper function from the `@app/sdk` library to generate the sidebar entries:
-
-```ts
-import { provideSidebarEntries } from '@app/sdk';
-import { NgModule } from '@angular/core';
-
-@NgModule({
-  providers: [
-    provideSidebarEntries([
-      {
-        text: 'Trashcan',
-        path: '/trashcan',
-        icon: 'delete'
-      }
-    ])
-  ]
-})
-export class TrashcanPluginModule {}
-```
-
 > For the complete list of the supported icons, please refer to the [Google Material Icons](https://fonts.google.com/icons?icon.set=Material+Icons).
 
 Next, update the `plugins/trashcan-plugin/src/index.ts` to export the newly created module:
@@ -62,29 +28,16 @@ Next, update the `plugins/trashcan-plugin/src/index.ts` to export the newly crea
 ```ts
 export * from './lib/lib.routes';
 export * from './lib/trashcan-plugin/trashcan-plugin.component';
-// export module
-export * from './lib/trashcan-plugin/trashcan-plugin.module';
 ```
 
 ### Integrating Plugin
 
-Update `src/app/app.module.ts`, import the module from the `trashcan-plugin` project, and import the module:
+> For the sake of the demo, we are going to keep the plugin in the same project workspace.
+> In real life, however, your plugin can be coming from various sources, like NPM, tarball file, Github Package registry, etc.
+>
+> Please refer to [Distributing Plugins](./plugins_distributing.md) chapter for more details.
 
-```ts
-import { TrashcanPluginModule } from 'trashcan-plugin';
-
-@NgModule({
-  imports: [
-    // ...
-    TrashcanPluginModule
-  ],
-  // ...
-})
-export class AppModule {
-
-```
-
-Finally, switch to the application routes config `src/app/app.routes.ts`, and update the `trashcan` entry:
+Update application routes config `src/app/app.routes.ts`, and add the `trashcan` entry to the expected position in the hierarchy:
 
 ```ts
 import { trashcanPluginRoutes } from 'trashcan-plugin';

@@ -16,5 +16,11 @@ export const appSidebarEntries: Array<AppSidebarEntry> = [
     text: 'Page 2',
     path: '/page2',
     icon: 'assignment'
+  },
+  // Trashcan Plugin
+  {
+    text: 'Trashcan',
+    path: '/trashcan',
+    icon: 'delete'
   }
 ];
