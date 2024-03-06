@@ -110,23 +110,7 @@ Points of interest:
 - `stickyHeader` is set to true to make the header bar remain on the screen
 - `sortingMode` is set to `client` to perform fast column sorting
 
-Finally, provide some CSS within `trashcan-plugin.component.css`, to fit the content into the page:
-
-```css
-lib-trashcan-plugin {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-adf-document-list {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-```
-
-Now, if you run or restart the application, the "Trashcan" route requires authentication, and you are able to see deleted files and folders:
+Now, if you run or restart the application, the `Trashcan` route requires authentication, and you are able to see deleted files and folders:
 
 ![Trashcan Tutorial: showing data](./images/tutorials_trashcan_02.png)
 

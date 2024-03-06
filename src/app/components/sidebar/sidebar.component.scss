@@ -18,4 +18,10 @@ app-sidebar {
     justify-content: center;
     width: 200px;
   }
+
+  mat-sidenav-content > *:not(router-outlet) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 }

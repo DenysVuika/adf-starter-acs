@@ -1,4 +1,4 @@
 <app-header class="page-header" [entries]="headerEntries$ | async" (toggleSidebar)="sidebar.toggle()"></app-header>
 <app-sidebar #sidebar [entries]="sidebarEntries$ | async">
-  <router-outlet></router-outlet>
+  <router-outlet id="main-content-outlet"></router-outlet>
 </app-sidebar>
