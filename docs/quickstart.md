@@ -29,7 +29,7 @@ You can find details in the `proxy.conf.js` file.
 
 ### OAuth2 configuration
 
-When you need to connect via OIDC/OAuth2, change the authorization type to OAuth `"authType": "OAUTH"` in `app.config.json` file, 
+When you need to connect via OIDC/OAuth2, change the authorization type to OAuth `"authType": "OAUTH"` in `app.config.json` file,
 and optionally set the `IDENTITY_SERVICE_URL` environment variable.
 
 > The `IDENTITY_SERVICE_URL` value defaults to the `BASE_URL`, and falls back to the `http://localhost:3000`.
