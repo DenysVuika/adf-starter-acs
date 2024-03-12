@@ -65,6 +65,7 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
       if (query) {
         this.sorting = this.getSorting();
         this.isLoading = true;
+        this.queryBuilder.execute(query);
       }
     });
 
