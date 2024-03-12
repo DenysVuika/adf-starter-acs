@@ -14,6 +14,14 @@ Running with a custom backend URL:
 BASE_URL="https://your.alfresco.backend.com" npm start
 ```
 
+## .env File
+
+Alternatively, you can create a `.env` file in your project root folder:
+
+```yml
+BASE_URL="https://your.alfresco.backend.com"
+```
+
 ## Proxy settings
 
 The template provides certain proxy settings to allow running web application locally without CORS setup.
