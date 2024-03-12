@@ -7,6 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AppHeaderEntry } from '@app/sdk';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +17,7 @@ import { AppHeaderEntry } from '@app/sdk';
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
+    MatButtonModule,
     TranslateModule,
     LanguageMenuModule,
     AppConfigModule,

@@ -1,4 +1,4 @@
-## Distributing Plugins
+# Distributing Plugins
 
 The plugins projects are regular Angular libraries.
 
@@ -7,7 +7,7 @@ you should be able to build and publish artifacts to NPM or GitHub package regis
 
 For the sake of example, this article assumes you are building and publishing a plugin named `trashcan-plugin`.
 
-### Updating Publish Configuration
+## Updating Publish Configuration
 
 Ensure the `package.json` config of your library contains the `publishConfig` settings as in the following example for `plugins/trashcan-plugin/package.json`:
 
@@ -19,7 +19,7 @@ Ensure the `package.json` config of your library contains the `publishConfig` se
 }
 ```
 
-### Building for Production
+## Building for Production
 
 First, build the library for `production`.
 
@@ -35,7 +35,7 @@ npx nx run trashcan-plugin:build --configuration=production
 
 By default, the build output is placed to the `./dist/plugins/` folder.
 
-### Publishing to NPM
+## Publishing to NPM
 
 At this point, you can navigate to the build output and run the `npm publish` command as in the next example:
 

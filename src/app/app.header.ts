@@ -13,5 +13,10 @@ export const appHeaderEntries: Array<AppHeaderEntry> = [
   {
     text: 'Page 2',
     path: '/page2'
+  },
+  {
+    path: '/search',
+    icon: 'search',
+    text: 'Search'
   }
 ];

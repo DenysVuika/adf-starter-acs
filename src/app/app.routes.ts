@@ -8,6 +8,7 @@ import { FileViewComponent } from './components/file-view/file-view.component';
 import { Page1Component } from './pages/page1/page1.component';
 import { Page2Component } from './pages/page2/page2.component';
 import { trashcanPluginRoutes } from 'trashcan-plugin';
+import { searchPluginRoutes } from 'search-plugin';
 
 /** Global application routes */
 export const appRoutes: Routes = [
@@ -40,6 +41,11 @@ export const appRoutes: Routes = [
       {
         path: 'trashcan',
         children: trashcanPluginRoutes,
+        canActivate: [AuthGuardEcm]
+      },
+      {
+        path: 'search',
+        children: searchPluginRoutes,
         canActivate: [AuthGuardEcm]
       }
     ]
