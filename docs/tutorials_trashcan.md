@@ -1,8 +1,8 @@
-## Creating a Trashcan Plugin
+# Creating a Trashcan Plugin
 
 In this tutorial, you are going to create a "Trashcan" page, showing deleted content in Alfresco Content Repository. The users are going to navigate to the "Trashcan" page via the Sidebar menu.
 
-### Generating New Plugin Library
+## Generating New Plugin Library
 
 Run the following command to generate a new `trashcan-plugin` library in the workspace:
 
@@ -30,7 +30,7 @@ export * from './lib/lib.routes';
 export * from './lib/trashcan-plugin/trashcan-plugin.component';
 ```
 
-### Integrating Plugin
+## Integrating Plugin
 
 > For the sake of the demo, we are going to keep the plugin in the same project workspace.
 > In real life, however, your plugin can be coming from various sources, like NPM, tarball file, Github Package registry, etc.
@@ -86,7 +86,7 @@ The link navigates you to the main content of the plugin:
 
 ![Trashcan Tutorial: first run](./images/tutorials_trashcan_01.png)
 
-### Displaying Trashcan Content
+## Displaying Trashcan Content
 
 You will need `DocumentListModule` from the Content Services, and `PaginationModule` from the Core libraries,
 to display a Trashcan content with pagination support.

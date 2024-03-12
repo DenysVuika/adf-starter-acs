@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - New `Search Plugin` with minimalistic search experience
+- Support icon buttons with Header component
 
 ## [3.0.0] - 2024-03-12
 

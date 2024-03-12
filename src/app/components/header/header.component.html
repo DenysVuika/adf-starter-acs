@@ -7,7 +7,14 @@
   <div class="app-header-spacer"></div>
 
   <ng-container *ngFor="let entry of entries">
-    <button mat-button [routerLink]="entry.path">{{ entry.text | translate }}</button>
+    <ng-container *ngIf="entry.icon; else text_item">
+      <button mat-icon-button [routerLink]="entry.path" [title]="entry.text | translate">
+        <mat-icon>{{ entry.icon }}</mat-icon>
+      </button>
+    </ng-container>
+    <ng-template #text_item>
+      <button mat-button [routerLink]="entry.path">{{ entry.text | translate }}</button>
+    </ng-template>
   </ng-container>
 
   <button mat-icon-button [matMenuTriggerFor]="menu">

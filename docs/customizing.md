@@ -87,6 +87,20 @@ Which gives the following result at the runtime:
 
 ![Custom App Menu Entry](./images/custom-app-menu-entry.png)
 
+You can also display menu entry as an icon button:
+
+```ts
+{
+  text: "Search",
+  path: "/search",
+  icon: "search"
+}
+```
+
+In this case, the `text` value becomes the button tooltip, and only icon displayed:
+
+![Header icon button](./images/header-icon-button.png)
+
 ## Custom Page Layouts
 
 You can control if your custom page has generic layout or a fully custom one.
