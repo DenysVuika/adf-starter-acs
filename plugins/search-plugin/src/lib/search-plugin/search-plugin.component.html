@@ -1,1 +1,28 @@
-<p>search-plugin works!</p>
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+
+<div style="margin: 10px">
+  <mat-form-field appearance="outline" style="width: 100%">
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="Search query" [value]="searchQuery" (change)="onSearchInputChanged($event)" />
+  </mat-form-field>
+</div>
+
+<!-- <div>
+  <p>Advanced filters</p>
+  <button mat-button adf-reset-search title="Reset">Reset</button>
+</div> -->
+
+<adf-search-filter-chips></adf-search-filter-chips>
+
+<adf-document-list #documentList [node]="$any(data)" [stickyHeader]="true" [selectionMode]="'multiple'" [sortingMode]="'server'" [sorting]="sorting">
+  <adf-custom-empty-content-template>
+    <adf-empty-content icon="search" [title]="'Empty Results'" [subtitle]="'No data matching your query'"> </adf-empty-content>
+  </adf-custom-empty-content-template>
+</adf-document-list>
+
+<adf-pagination
+  *ngIf="totalResults > 0"
+  [target]="documentList"
+  [supportedPageSizes]="[25, 50, 100]"
+  (change)="onPaginationChanged($event)"
+></adf-pagination>
