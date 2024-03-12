@@ -1,0 +1,33 @@
+{
+  "name": "search-plugin",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "plugins/search-plugin/src",
+  "prefix": "lib",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "plugins/search-plugin/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "plugins/search-plugin/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "plugins/search-plugin/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["plugins/search-plugin/**/*.ts", "plugins/search-plugin/**/*.html", "plugins/search-plugin/package.json"]
+      }
+    }
+  }
+}
