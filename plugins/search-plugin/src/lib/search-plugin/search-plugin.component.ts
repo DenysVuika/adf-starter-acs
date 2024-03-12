@@ -41,7 +41,6 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
   isLoading = false;
   searchQuery: string | null = null;
   sorting = ['name', 'asc'];
-  totalResults = 0;
   data?: ResultSetPaging;
 
   private config = {
@@ -73,7 +72,7 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
       // TODO: investigate why needed in ACA
       this.queryBuilder.paging.skipCount = 0;
 
-      this.onSearchResultLoaded(data);
+      this.data = data;
       this.isLoading = false;
     });
 
@@ -84,9 +83,11 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
     // this.columns = this.extensions.documentListPresets.searchResults || [];
   }
 
-  onSearchError(error: { message: any }) {
+  onSearchError(error: { message: never }) {
     const { statusCode } = JSON.parse(error.message).error;
+    this.notifications.showError(`Search error: ${statusCode}`);
 
+    // TODO: errors should be moved from ACA to ADF
     // const messageKey = `APP.BROWSE.SEARCH.ERRORS.${statusCode}`;
     // let translated = this.translationService.instant(messageKey);
 
@@ -95,30 +96,22 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
     // }
 
     // this.store.dispatch(new SnackbarErrorAction(translated));
-    this.notifications.showError(`Search error: ${statusCode}`);
   }
 
-  onSearchResultLoaded(nodePaging: ResultSetPaging) {
-    this.data = nodePaging;
-    this.totalResults = this.getNumberOfResults();
-  }
-
-  getNumberOfResults(): number {
+  /**
+   * Returns total number of search results, or 0
+   */
+  get totalResults(): number {
     return this.data?.list?.pagination?.totalItems || 0;
   }
 
-  onPaginationChanged(pagination: Pagination) {
+  onPaginationChanged({ maxItems, skipCount }: Pagination) {
     this.queryBuilder.paging = {
-      maxItems: pagination.maxItems,
-      skipCount: pagination.skipCount
+      maxItems,
+      skipCount
     };
     this.queryBuilder.update();
   }
-
-  // onSearchSortingUpdate(option: SearchSortingDefinition) {
-  //   this.queryBuilder.sorting = [{ ...option, ascending: option.ascending }];
-  //   this.queryBuilder.update();
-  // }
 
   ngOnDestroy(): void {
     this.onDestroy$.next(true);
@@ -135,7 +128,7 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
     return ['name', 'asc'];
   }
 
-  formatSearchQuery(userInput: string, fields = ['cm:name']) {
+  private formatSearchQuery(userInput: string, fields = ['cm:name']) {
     if (!userInput) {
       return null;
     }
