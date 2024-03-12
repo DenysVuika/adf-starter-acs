@@ -1,4 +1,4 @@
-## Plugin Libraries
+# Plugin Libraries
 
 To generate a library, you can use Nx Console for the VS Code or IntelliJ:
 
@@ -37,7 +37,7 @@ npx nx generate @nx/angular:library \
   --no-interactive
 ```
 
-### Integrating with Routes
+## Integrating with Routes
 
 The schematics library is going to update the `src/app/app.routes.ts` with the following entry:
 
