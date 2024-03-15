@@ -1,6 +1,8 @@
 <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
 <app-search-input [value]="searchQuery" (changed)="onSearchQueryChanged($event)"></app-search-input>
 
+<adf-search-filter-chips></adf-search-filter-chips>
+
 <adf-document-list #documentList [node]="$any(data)" [stickyHeader]="true" [selectionMode]="'multiple'" [sortingMode]="'server'" [sorting]="sorting">
   <adf-custom-empty-content-template>
     <adf-empty-content icon="search" [title]="'Empty Results'" [subtitle]="'No data matching your query'"> </adf-empty-content>

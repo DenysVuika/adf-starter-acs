@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DocumentListModule, SearchModule, SearchQueryBuilderService } from '@alfresco/adf-content-services';
-import { DataTableModule, NotificationService, PaginationModule, TemplateModule } from '@alfresco/adf-core';
+import { AppConfigService, DataTableModule, NotificationService, PaginationModule, TemplateModule } from '@alfresco/adf-core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { Pagination, ResultSetPaging } from '@alfresco/js-api';
@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { MatIconModule } from '@angular/material/icon';
 import { SearchInputComponent } from './components/search-input.component';
+import { DefaultSearchConfiguration } from './search.config';
 
 @Component({
   selector: 'lib-search-plugin',
@@ -29,6 +30,7 @@ import { SearchInputComponent } from './components/search-input.component';
   styleUrls: ['./search-plugin.component.css']
 })
 export class SearchPluginComponent implements OnInit, OnDestroy {
+  private appConfig = inject(AppConfigService);
   private queryBuilder = inject(SearchQueryBuilderService);
   private notifications = inject(NotificationService);
   private onDestroy$ = new Subject<boolean>();
@@ -39,7 +41,7 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
   data?: ResultSetPaging;
 
   private config = {
-    fields: ['cm:name', 'cm:title', 'cm:description', 'TEXT', 'TAG']
+    aca_fields: ['cm:name', 'cm:title', 'cm:description', 'TEXT', 'TAG']
   };
 
   constructor() {
@@ -49,6 +51,8 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
       skipCount: 0,
       maxItems: 25
     };
+
+    this.appConfig.config['search'] = [DefaultSearchConfiguration];
   }
 
   ngOnInit(): void {
@@ -180,37 +184,13 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
     return '(' + fields.map((field) => `${prefix}${field}:"${term}${suffix}"`).join(' OR ') + ')';
   }
 
-  onSearchInputChanged(event: Event) {
-    this.isLoading = true;
-
-    const input = event.target as HTMLInputElement;
-    const searchTerm = input.value;
-
-    if (searchTerm) {
-      this.searchQuery = input.value;
-
-      const query = this.formatSearchQuery(this.searchQuery, this.config.fields);
-      if (query) {
-        this.queryBuilder.userQuery = decodeURIComponent(query);
-        this.queryBuilder.update();
-      }
-    } else {
-      this.searchQuery = null;
-      this.queryBuilder.userQuery = '';
-      this.queryBuilder.executed.next({
-        list: { pagination: { totalItems: 0 }, entries: [] }
-      });
-      this.isLoading = false;
-    }
-  }
-
   onSearchQueryChanged(searchTerm: string) {
     this.isLoading = true;
 
     if (searchTerm) {
       this.searchQuery = searchTerm;
 
-      const query = this.formatSearchQuery(this.searchQuery, this.config.fields);
+      const query = this.formatSearchQuery(this.searchQuery, this.config.aca_fields);
       if (query) {
         this.queryBuilder.userQuery = decodeURIComponent(query);
         this.queryBuilder.update();
