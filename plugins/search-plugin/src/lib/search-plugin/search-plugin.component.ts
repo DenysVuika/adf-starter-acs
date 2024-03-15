@@ -7,18 +7,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { Pagination, ResultSetPaging } from '@alfresco/js-api';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
+import { SearchInputComponent } from './components/search-input.component';
 
 @Component({
   selector: 'lib-search-plugin',
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
     SearchModule,
     DataTableModule,
     DocumentListModule,
@@ -26,9 +22,8 @@ import { MatInputModule } from '@angular/material/input';
     TemplateModule,
     MatProgressBarModule,
     MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    SearchInputComponent
   ],
   templateUrl: './search-plugin.component.html',
   styleUrls: ['./search-plugin.component.css']
@@ -39,7 +34,7 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
   private onDestroy$ = new Subject<boolean>();
 
   isLoading = false;
-  searchQuery: string | null = null;
+  searchQuery = '';
   sorting = ['name', 'asc'];
   data?: ResultSetPaging;
 
@@ -193,6 +188,27 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
 
     if (searchTerm) {
       this.searchQuery = input.value;
+
+      const query = this.formatSearchQuery(this.searchQuery, this.config.fields);
+      if (query) {
+        this.queryBuilder.userQuery = decodeURIComponent(query);
+        this.queryBuilder.update();
+      }
+    } else {
+      this.searchQuery = null;
+      this.queryBuilder.userQuery = '';
+      this.queryBuilder.executed.next({
+        list: { pagination: { totalItems: 0 }, entries: [] }
+      });
+      this.isLoading = false;
+    }
+  }
+
+  onSearchQueryChanged(searchTerm: string) {
+    this.isLoading = true;
+
+    if (searchTerm) {
+      this.searchQuery = searchTerm;
 
       const query = this.formatSearchQuery(this.searchQuery, this.config.fields);
       if (query) {
