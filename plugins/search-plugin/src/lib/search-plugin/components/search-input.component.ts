@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
   standalone: true,
   imports: [CommonModule, MatFormFieldModule, MatInputModule],
   templateUrl: `./search-input.component.html`,
+  styleUrls: ['./search-input.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class SearchInputComponent {
