@@ -196,7 +196,7 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
         this.queryBuilder.update();
       }
     } else {
-      this.searchQuery = null;
+      this.searchQuery = '';
       this.queryBuilder.userQuery = '';
       this.queryBuilder.executed.next({
         list: { pagination: { totalItems: 0 }, entries: [] }

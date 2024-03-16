@@ -70,7 +70,7 @@ export const DefaultSearchConfiguration: SearchConfiguration = {
     ],
     defaults: [
       {
-        label: undefined, // TODO
+        label: 'Score',
         key: 'score',
         type: 'SCORE',
         field: 'score',
@@ -122,10 +122,10 @@ export const DefaultSearchConfiguration: SearchConfiguration = {
   },
   categories: [
     {
-      expanded: undefined, // TODO
       id: 'logic',
       name: 'LIB.SEARCH.CATEGORIES.LOGIC',
       enabled: true,
+      expanded: false,
       component: {
         selector: 'logical-filter',
         settings: {
@@ -136,10 +136,10 @@ export const DefaultSearchConfiguration: SearchConfiguration = {
       }
     },
     {
-      expanded: undefined, // TODO,
       id: 'properties',
       name: 'LIB.SEARCH.CATEGORIES.PROPERTIES',
       enabled: true,
+      expanded: false,
       component: {
         selector: 'properties',
         settings: {
@@ -300,10 +300,10 @@ export const DefaultSearchConfiguration: SearchConfiguration = {
       }
     },
     {
-      expanded: undefined, // TODO
       id: 'createdModifiedDateRange',
       name: 'LIB.SEARCH.CATEGORIES.DATE',
       enabled: true,
+      expanded: false,
       component: {
         selector: 'date-range',
         settings: {
@@ -318,10 +318,10 @@ export const DefaultSearchConfiguration: SearchConfiguration = {
       }
     },
     {
-      expanded: undefined, // TODO
       id: 'location',
       name: 'LIB.SEARCH.FACET_FIELDS.LOCATION',
       enabled: true,
+      expanded: false,
       component: {
         selector: 'autocomplete-chips',
         settings: {
@@ -334,10 +334,10 @@ export const DefaultSearchConfiguration: SearchConfiguration = {
       }
     },
     {
-      expanded: undefined, // TODO
       id: 'tag',
       name: 'Tags',
       enabled: true,
+      expanded: false,
       component: {
         selector: 'autocomplete-chips',
         settings: {
@@ -352,10 +352,10 @@ export const DefaultSearchConfiguration: SearchConfiguration = {
       }
     },
     {
-      expanded: undefined, // TODO
       id: 'categories',
       name: 'LIB.SEARCH.FACET_FIELDS.CATEGORIES',
       enabled: true,
+      expanded: false,
       component: {
         selector: 'autocomplete-chips',
         settings: {
