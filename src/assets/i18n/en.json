@@ -11,5 +11,22 @@
       "DOCUMENTS": "Documents"
     }
   },
+  "LIB": {
+    "SEARCH": {
+      "CATEGORIES": {
+        "LOGIC": "Logic",
+        "PROPERTIES": "Properties",
+        "DATE": "Date",
+        "DATE_TABS": {
+          "CREATED": "Created",
+          "MODIFIED": "Modified"
+        }
+      },
+      "FACET_FIELDS": {
+        "LOCATION": "Location",
+        "CATEGORIES": "Categories"
+      }
+    }
+  },
   "welcome_msg": "Please, select a feature in the app menu."
 }

@@ -124,7 +124,7 @@ export const DefaultSearchConfiguration: SearchConfiguration = {
     {
       expanded: undefined, // TODO
       id: 'logic',
-      name: 'SEARCH.CATEGORIES.LOGIC',
+      name: 'LIB.SEARCH.CATEGORIES.LOGIC',
       enabled: true,
       component: {
         selector: 'logical-filter',
@@ -138,7 +138,7 @@ export const DefaultSearchConfiguration: SearchConfiguration = {
     {
       expanded: undefined, // TODO,
       id: 'properties',
-      name: 'SEARCH.CATEGORIES.PROPERTIES',
+      name: 'LIB.SEARCH.CATEGORIES.PROPERTIES',
       enabled: true,
       component: {
         selector: 'properties',
@@ -302,7 +302,7 @@ export const DefaultSearchConfiguration: SearchConfiguration = {
     {
       expanded: undefined, // TODO
       id: 'createdModifiedDateRange',
-      name: 'SEARCH.CATEGORIES.DATE',
+      name: 'LIB.SEARCH.CATEGORIES.DATE',
       enabled: true,
       component: {
         selector: 'date-range',
@@ -311,8 +311,8 @@ export const DefaultSearchConfiguration: SearchConfiguration = {
           dateFormat: 'dd-MMM-yy',
           maxDate: 'today',
           displayedLabelsByField: {
-            'cm:created': 'SEARCH.CATEGORIES.DATE_TABS.CREATED',
-            'cm:modified': 'SEARCH.CATEGORIES.DATE_TABS.MODIFIED'
+            'cm:created': 'LIB.SEARCH.CATEGORIES.DATE_TABS.CREATED',
+            'cm:modified': 'LIB.SEARCH.CATEGORIES.DATE_TABS.MODIFIED'
           }
         }
       }
@@ -320,7 +320,7 @@ export const DefaultSearchConfiguration: SearchConfiguration = {
     {
       expanded: undefined, // TODO
       id: 'location',
-      name: 'SEARCH.FACET_FIELDS.LOCATION',
+      name: 'LIB.SEARCH.FACET_FIELDS.LOCATION',
       enabled: true,
       component: {
         selector: 'autocomplete-chips',
@@ -354,7 +354,7 @@ export const DefaultSearchConfiguration: SearchConfiguration = {
     {
       expanded: undefined, // TODO
       id: 'categories',
-      name: 'SEARCH.FACET_FIELDS.CATEGORIES',
+      name: 'LIB.SEARCH.FACET_FIELDS.CATEGORIES',
       enabled: true,
       component: {
         selector: 'autocomplete-chips',
