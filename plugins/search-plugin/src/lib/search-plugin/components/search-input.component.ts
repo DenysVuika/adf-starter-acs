@@ -32,7 +32,9 @@ export class SearchInputComponent {
     const searchTerm = input.value || '';
 
     const query = this.formatSearchQuery(searchTerm, this.fields);
-    this.changed.emit(decodeURIComponent(query));
+    if (query) {
+      this.changed.emit(decodeURIComponent(query));
+    }
   }
 
   private formatSearchQuery(userInput: string, fields = ['cm:name']) {
