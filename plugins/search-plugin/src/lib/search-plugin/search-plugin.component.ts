@@ -52,6 +52,7 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
       maxItems: 25
     };
 
+    // TODO: addressed by https://github.com/Alfresco/alfresco-ng2-components/pull/9448
     this.appConfig.config['search'] = [DefaultSearchConfiguration];
   }
 
