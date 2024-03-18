@@ -1,6 +1,6 @@
-<div style="margin: 10px">
+<div class="app-search-input-container">
   <mat-form-field appearance="outline">
-    <mat-label>Search</mat-label>
-    <input matInput placeholder="Search query" [value]="value" (change)="onSearchInputChanged($event)" />
+    <mat-label *ngIf="label">{{ label }}</mat-label>
+    <input matInput [placeholder]="placeholder" [value]="value" (change)="onSearchInputChanged($event)" />
   </mat-form-field>
 </div>

@@ -40,8 +40,8 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
   sorting = ['name', 'asc'];
   data?: ResultSetPaging;
 
-  private config = {
-    aca_fields: ['cm:name', 'cm:title', 'cm:description', 'TEXT', 'TAG']
+  config = {
+    fields: ['cm:name', 'cm:title', 'cm:description', 'TEXT', 'TAG']
   };
 
   constructor() {
@@ -127,74 +127,13 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
     return ['name', 'asc'];
   }
 
-  private formatSearchQuery(userInput: string, fields = ['cm:name']) {
-    if (!userInput) {
-      return null;
-    }
-
-    if (/^http[s]?:\/\//.test(userInput)) {
-      return this.formatFields(fields, userInput);
-    }
-
-    userInput = userInput.trim();
-
-    if (userInput.includes(':') || userInput.includes('"')) {
-      return userInput;
-    }
-
-    const words = userInput.split(' ');
-
-    if (words.length > 1) {
-      const separator = words.some(this.isOperator) ? ' ' : ' AND ';
-
-      return words
-        .map((term) => {
-          if (this.isOperator(term)) {
-            return term;
-          }
-
-          return this.formatFields(fields, term);
-        })
-        .join(separator);
-    }
-
-    return this.formatFields(fields, userInput);
-  }
-
-  private isOperator(input: string): boolean {
-    if (input) {
-      input = input.trim().toUpperCase();
-
-      const operators = ['AND', 'OR'];
-      return operators.includes(input);
-    }
-    return false;
-  }
-
-  private formatFields(fields: string[], term: string): string {
-    let prefix = '';
-    let suffix = '*';
-
-    if (term.startsWith('=')) {
-      prefix = '=';
-      suffix = '';
-      term = term.substring(1);
-    }
-
-    return '(' + fields.map((field) => `${prefix}${field}:"${term}${suffix}"`).join(' OR ') + ')';
-  }
-
   onSearchQueryChanged(searchTerm: string) {
     this.isLoading = true;
 
     if (searchTerm) {
       this.searchQuery = searchTerm;
-
-      const query = this.formatSearchQuery(this.searchQuery, this.config.aca_fields);
-      if (query) {
-        this.queryBuilder.userQuery = decodeURIComponent(query);
-        this.queryBuilder.update();
-      }
+      this.queryBuilder.userQuery = searchTerm;
+      this.queryBuilder.update();
     } else {
       this.searchQuery = '';
       this.queryBuilder.userQuery = '';

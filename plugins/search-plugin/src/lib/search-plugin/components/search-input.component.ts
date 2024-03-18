@@ -15,6 +15,15 @@ export class SearchInputComponent {
   @Input()
   value = '';
 
+  @Input()
+  label = 'Search';
+
+  @Input()
+  placeholder = 'Search query';
+
+  @Input()
+  fields: string[] = [];
+
   @Output()
   changed = new EventEmitter<string>();
 
@@ -22,6 +31,64 @@ export class SearchInputComponent {
     const input = event.target as HTMLInputElement;
     const searchTerm = input.value || '';
 
-    this.changed.emit(searchTerm);
+    const query = this.formatSearchQuery(searchTerm, this.fields);
+    this.changed.emit(decodeURIComponent(query));
+  }
+
+  private formatSearchQuery(userInput: string, fields = ['cm:name']) {
+    if (!userInput) {
+      return null;
+    }
+
+    if (/^http[s]?:\/\//.test(userInput)) {
+      return this.formatFields(fields, userInput);
+    }
+
+    userInput = userInput.trim();
+
+    if (userInput.includes(':') || userInput.includes('"')) {
+      return userInput;
+    }
+
+    const words = userInput.split(' ');
+
+    if (words.length > 1) {
+      const separator = words.some(this.isOperator) ? ' ' : ' AND ';
+
+      return words
+        .map((term) => {
+          if (this.isOperator(term)) {
+            return term;
+          }
+
+          return this.formatFields(fields, term);
+        })
+        .join(separator);
+    }
+
+    return this.formatFields(fields, userInput);
+  }
+
+  private isOperator(input: string): boolean {
+    if (input) {
+      input = input.trim().toUpperCase();
+
+      const operators = ['AND', 'OR'];
+      return operators.includes(input);
+    }
+    return false;
+  }
+
+  private formatFields(fields: string[], term: string): string {
+    let prefix = '';
+    let suffix = '*';
+
+    if (term.startsWith('=')) {
+      prefix = '=';
+      suffix = '';
+      term = term.substring(1);
+    }
+
+    return '(' + fields.map((field) => `${prefix}${field}:"${term}${suffix}"`).join(' OR ') + ')';
   }
 }
