@@ -1,5 +1,5 @@
 <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
-<app-search-input [value]="searchQuery" [fields]="config.fields" (changed)="onSearchQueryChanged($event)"></app-search-input>
+<app-search-input [fields]="config.fields" (changed)="onSearchQueryChanged($event)"></app-search-input>
 
 <div style="margin: 10px">
   <adf-search-filter-chips></adf-search-filter-chips>

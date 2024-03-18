@@ -36,7 +36,6 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
   private onDestroy$ = new Subject<boolean>();
 
   isLoading = false;
-  searchQuery = '';
   sorting = ['name', 'asc'];
   data?: ResultSetPaging;
 
@@ -132,11 +131,9 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
     this.isLoading = true;
 
     if (searchTerm) {
-      this.searchQuery = searchTerm;
       this.queryBuilder.userQuery = searchTerm;
       this.queryBuilder.update();
     } else {
-      this.searchQuery = '';
       this.queryBuilder.userQuery = '';
       this.queryBuilder.executed.next({
         list: { pagination: { totalItems: 0 }, entries: [] }
