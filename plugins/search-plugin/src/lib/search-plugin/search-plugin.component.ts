@@ -1,24 +1,21 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DocumentListModule, SearchModule, SearchQueryBuilderService } from '@alfresco/adf-content-services';
-import { DataTableModule, NotificationService, PaginationModule, TemplateModule } from '@alfresco/adf-core';
+import { AppConfigService, DataTableModule, NotificationService, PaginationModule, TemplateModule } from '@alfresco/adf-core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { Pagination, ResultSetPaging } from '@alfresco/js-api';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
+import { SearchInputComponent } from './components/search-input.component';
+import { DefaultSearchConfiguration } from './search.config';
 
 @Component({
   selector: 'lib-search-plugin',
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
     SearchModule,
     DataTableModule,
     DocumentListModule,
@@ -26,24 +23,23 @@ import { MatInputModule } from '@angular/material/input';
     TemplateModule,
     MatProgressBarModule,
     MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    SearchInputComponent
   ],
   templateUrl: './search-plugin.component.html',
   styleUrls: ['./search-plugin.component.css']
 })
 export class SearchPluginComponent implements OnInit, OnDestroy {
+  private appConfig = inject(AppConfigService);
   private queryBuilder = inject(SearchQueryBuilderService);
   private notifications = inject(NotificationService);
   private onDestroy$ = new Subject<boolean>();
 
   isLoading = false;
-  searchQuery: string | null = null;
   sorting = ['name', 'asc'];
   data?: ResultSetPaging;
 
-  private config = {
+  config = {
     fields: ['cm:name', 'cm:title', 'cm:description', 'TEXT', 'TAG']
   };
 
@@ -54,6 +50,9 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
       skipCount: 0,
       maxItems: 25
     };
+
+    // TODO: addressed by https://github.com/Alfresco/alfresco-ng2-components/pull/9448
+    this.appConfig.config['search'] = [DefaultSearchConfiguration];
   }
 
   ngOnInit(): void {
@@ -128,79 +127,13 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
     return ['name', 'asc'];
   }
 
-  private formatSearchQuery(userInput: string, fields = ['cm:name']) {
-    if (!userInput) {
-      return null;
-    }
-
-    if (/^http[s]?:\/\//.test(userInput)) {
-      return this.formatFields(fields, userInput);
-    }
-
-    userInput = userInput.trim();
-
-    if (userInput.includes(':') || userInput.includes('"')) {
-      return userInput;
-    }
-
-    const words = userInput.split(' ');
-
-    if (words.length > 1) {
-      const separator = words.some(this.isOperator) ? ' ' : ' AND ';
-
-      return words
-        .map((term) => {
-          if (this.isOperator(term)) {
-            return term;
-          }
-
-          return this.formatFields(fields, term);
-        })
-        .join(separator);
-    }
-
-    return this.formatFields(fields, userInput);
-  }
-
-  private isOperator(input: string): boolean {
-    if (input) {
-      input = input.trim().toUpperCase();
-
-      const operators = ['AND', 'OR'];
-      return operators.includes(input);
-    }
-    return false;
-  }
-
-  private formatFields(fields: string[], term: string): string {
-    let prefix = '';
-    let suffix = '*';
-
-    if (term.startsWith('=')) {
-      prefix = '=';
-      suffix = '';
-      term = term.substring(1);
-    }
-
-    return '(' + fields.map((field) => `${prefix}${field}:"${term}${suffix}"`).join(' OR ') + ')';
-  }
-
-  onSearchInputChanged(event: Event) {
+  onSearchQueryChanged(searchTerm: string) {
     this.isLoading = true;
 
-    const input = event.target as HTMLInputElement;
-    const searchTerm = input.value;
-
     if (searchTerm) {
-      this.searchQuery = input.value;
-
-      const query = this.formatSearchQuery(this.searchQuery, this.config.fields);
-      if (query) {
-        this.queryBuilder.userQuery = decodeURIComponent(query);
-        this.queryBuilder.update();
-      }
+      this.queryBuilder.userQuery = searchTerm;
+      this.queryBuilder.update();
     } else {
-      this.searchQuery = null;
       this.queryBuilder.userQuery = '';
       this.queryBuilder.executed.next({
         list: { pagination: { totalItems: 0 }, entries: [] }
