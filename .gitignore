@@ -44,6 +44,8 @@ testem.log
 .env
 .eslintcache
 .nx
+.yalc
+yalc.lock
 
 # System Files
 .DS_Store
