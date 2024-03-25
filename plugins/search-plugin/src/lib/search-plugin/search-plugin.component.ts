@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DocumentListModule, SearchModule, SearchQueryBuilderService } from '@alfresco/adf-content-services';
+import { DocumentListModule, SearchInputComponent, SearchModule, SearchQueryBuilderService } from '@alfresco/adf-content-services';
 import { AppConfigService, DataTableModule, NotificationService, PaginationModule, TemplateModule } from '@alfresco/adf-core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
@@ -8,7 +8,6 @@ import { Pagination, ResultSetPaging } from '@alfresco/js-api';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { MatIconModule } from '@angular/material/icon';
-import { SearchInputComponent } from './components/search-input.component';
 import { DefaultSearchConfiguration } from './search.config';
 
 @Component({

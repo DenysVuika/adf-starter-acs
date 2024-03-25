@@ -1,5 +1,5 @@
 <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
-<app-search-input [fields]="config.fields" (changed)="onSearchQueryChanged($event)"></app-search-input>
+<adf-search-input [fields]="config.fields" (changed)="onSearchQueryChanged($event)"></adf-search-input>
 
 <div style="margin: 10px">
   <adf-search-filter-chips>
@@ -38,6 +38,6 @@
 <adf-pagination
   *ngIf="totalResults > 0"
   [target]="documentList"
-  [supportedPageSizes]="[25, 50, 100, 200, 500]"
+  [supportedPageSizes]="[5, 10, 15, 20]"
   (change)="onPaginationChanged($event)"
 ></adf-pagination>
