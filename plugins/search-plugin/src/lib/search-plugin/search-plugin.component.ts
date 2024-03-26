@@ -1,14 +1,13 @@
 import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DocumentListModule, SearchInputComponent, SearchModule, SearchQueryBuilderService } from '@alfresco/adf-content-services';
-import { AppConfigService, DataTableModule, NotificationService, PaginationModule, TemplateModule } from '@alfresco/adf-core';
+import { DataTableModule, NotificationService, PaginationModule, TemplateModule } from '@alfresco/adf-core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { Pagination, ResultSetPaging } from '@alfresco/js-api';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { MatIconModule } from '@angular/material/icon';
-import { DefaultSearchConfiguration } from './search.config';
 
 @Component({
   selector: 'lib-search-plugin',
@@ -29,7 +28,6 @@ import { DefaultSearchConfiguration } from './search.config';
   styleUrls: ['./search-plugin.component.css']
 })
 export class SearchPluginComponent implements OnInit, OnDestroy {
-  private appConfig = inject(AppConfigService);
   private queryBuilder = inject(SearchQueryBuilderService);
   private notifications = inject(NotificationService);
   private onDestroy$ = new Subject<boolean>();
@@ -49,9 +47,6 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
       skipCount: 0,
       maxItems: 25
     };
-
-    // TODO: addressed by https://github.com/Alfresco/alfresco-ng2-components/pull/9448
-    this.appConfig.config['search'] = [DefaultSearchConfiguration];
   }
 
   ngOnInit(): void {
