@@ -7,7 +7,7 @@ import {
   SearchModule,
   SearchQueryBuilderService
 } from '@alfresco/adf-content-services';
-import { DataTableModule, NotificationService, PaginationModule, TemplateModule } from '@alfresco/adf-core';
+import { DataTableModule, NotificationService, PaginationComponent, TemplateModule } from '@alfresco/adf-core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { Pagination, ResultSetPaging } from '@alfresco/js-api';
@@ -24,12 +24,12 @@ import { DefaultSearchConfiguration } from './search.config';
     SearchModule,
     DataTableModule,
     DocumentListModule,
-    PaginationModule,
     TemplateModule,
     MatProgressBarModule,
     MatButtonModule,
     MatIconModule,
-    SearchInputComponent
+    SearchInputComponent,
+    PaginationComponent
   ],
   providers: [
     // TODO: Search not working without this line
