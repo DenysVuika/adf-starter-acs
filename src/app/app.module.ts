@@ -8,7 +8,6 @@ import { ContentModule } from '@alfresco/adf-content-services';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
-import { AppLayoutComponent } from './components/page-layout/page-layout.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
@@ -28,8 +27,7 @@ import { appHeaderEntries } from './app.header';
     ContentModule.forRoot(),
     TranslateModule.forRoot({
       loader: { provide: TranslateLoader, useClass: TranslateLoaderService }
-    }),
-    AppLayoutComponent
+    })
   ],
   declarations: [AppComponent],
   providers: [provideTranslations('app', 'assets'), provideHeaderEntries(appHeaderEntries), provideSidebarEntries(appSidebarEntries)],
