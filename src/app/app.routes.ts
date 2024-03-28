@@ -2,17 +2,14 @@ import { Routes } from '@angular/router';
 import { AuthGuardEcm } from '@alfresco/adf-core';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { DocumentsComponent } from './pages/documents/documents.component';
 import { AppLayoutComponent } from './components/page-layout/page-layout.component';
 import { FileViewComponent } from './components/file-view/file-view.component';
 import { Page1Component } from './pages/page1/page1.component';
 import { Page2Component } from './pages/page2/page2.component';
-import { trashcanPluginRoutes } from 'trashcan-plugin';
-import { searchPluginRoutes } from 'search-plugin';
 
 /** Global application routes */
 export const appRoutes: Routes = [
-  { path: 'files/:nodeId/view', component: FileViewComponent, canActivate: [AuthGuardEcm], outlet: 'overlay' },
+  { path: 'preview/:nodeId', component: FileViewComponent, canActivate: [AuthGuardEcm], outlet: 'overlay' },
   {
     path: '',
     component: AppLayoutComponent,
@@ -27,8 +24,8 @@ export const appRoutes: Routes = [
       },
       {
         path: 'documents',
-        component: DocumentsComponent,
-        canActivate: [AuthGuardEcm]
+        canActivate: [AuthGuardEcm],
+        loadChildren: () => import('documents-plugin').then((m) => m.documentsPluginRoutes)
       },
       {
         path: 'page1',
@@ -40,13 +37,13 @@ export const appRoutes: Routes = [
       },
       {
         path: 'trashcan',
-        children: trashcanPluginRoutes,
-        canActivate: [AuthGuardEcm]
+        canActivate: [AuthGuardEcm],
+        loadChildren: () => import('trashcan-plugin').then((m) => m.trashcanPluginRoutes)
       },
       {
         path: 'search',
-        children: searchPluginRoutes,
-        canActivate: [AuthGuardEcm]
+        canActivate: [AuthGuardEcm],
+        loadChildren: () => import('search-plugin').then((m) => m.searchPluginRoutes)
       }
     ]
   },

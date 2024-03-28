@@ -1,0 +1,33 @@
+{
+  "name": "documents-plugin",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "plugins/documents-plugin/src",
+  "prefix": "lib",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "plugins/documents-plugin/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "plugins/documents-plugin/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "plugins/documents-plugin/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["plugins/documents-plugin/**/*.ts", "plugins/documents-plugin/**/*.html", "plugins/documents-plugin/package.json"]
+      }
+    }
+  }
+}
