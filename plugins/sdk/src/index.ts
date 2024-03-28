@@ -1,3 +1,3 @@
 export * from './lib/sdk.module';
-export * from './lib/navigation.service';
-export * from './lib/preview.service';
+export * from './lib/services/navigation.service';
+export * from './lib/services/preview.service';
