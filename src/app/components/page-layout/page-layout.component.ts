@@ -1,8 +1,7 @@
 import { Component, ViewEncapsulation, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AppHeaderComponent } from '../header/header.component';
 import { AppSidebarComponent } from '../sidebar/sidebar.component';
-import { NavigationService } from '@app/sdk';
+import { AppHeaderComponent, NavigationService } from '@app/sdk';
 import { CommonModule } from '@angular/common';
 
 @Component({
