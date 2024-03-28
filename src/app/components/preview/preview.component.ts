@@ -29,11 +29,11 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule
   ],
   selector: 'app-file-view',
-  templateUrl: 'file-view.component.html',
-  styleUrls: ['file-view.component.scss'],
+  templateUrl: 'preview.component.html',
+  styleUrls: ['preview.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class FileViewComponent implements OnInit {
+export class PreviewComponent implements OnInit {
   nodeId: string = null;
 
   private notificationService = inject(NotificationService);

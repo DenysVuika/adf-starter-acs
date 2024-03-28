@@ -3,13 +3,13 @@ import { AuthGuardEcm } from '@alfresco/adf-core';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AppLayoutComponent } from './components/page-layout/page-layout.component';
-import { FileViewComponent } from './components/file-view/file-view.component';
+import { PreviewComponent } from './components/preview/preview.component';
 import { Page1Component } from './pages/page1/page1.component';
 import { Page2Component } from './pages/page2/page2.component';
 
 /** Global application routes */
 export const appRoutes: Routes = [
-  { path: 'preview/:nodeId', component: FileViewComponent, canActivate: [AuthGuardEcm], outlet: 'overlay' },
+  { path: 'preview/:nodeId', component: PreviewComponent, canActivate: [AuthGuardEcm], outlet: 'overlay' },
   {
     path: '',
     component: AppLayoutComponent,
