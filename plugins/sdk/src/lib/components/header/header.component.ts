@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { AppHeaderEntry } from '../../services/navigation.service';
+import { AppHeaderEntry } from '../../types';
 
 @Component({
   selector: 'app-header',

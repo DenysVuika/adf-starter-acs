@@ -5,7 +5,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { AppSidebarEntry } from '../../services/navigation.service';
+import { AppSidebarEntry } from '../../types';
 
 @Component({
   selector: 'app-sidebar',

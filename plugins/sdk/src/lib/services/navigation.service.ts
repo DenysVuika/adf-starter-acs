@@ -1,8 +1,6 @@
 import { Inject, Injectable, InjectionToken, Optional, Provider } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-
-export type AppSidebarEntry = { text: string; path: string; icon?: string };
-export type AppHeaderEntry = { text: string; path: string; icon?: string };
+import { AppHeaderEntry, AppSidebarEntry } from '../types';
 
 export const APP_SIDEBAR_ENTRY_TOKEN = new InjectionToken<AppSidebarEntry>('Injection token for application sidebar entries.');
 export const APP_HEADER_ENTRY_TOKEN = new InjectionToken<AppHeaderEntry>('Injection token for application header entries.');
