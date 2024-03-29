@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { AppToolbarEntry } from '../../types';
+import { AppTitleComponent } from '../title';
 
 @Component({
   selector: 'app-toolbar',
@@ -22,7 +23,8 @@ import { AppToolbarEntry } from '../../types';
     LanguageMenuModule,
     AppConfigModule,
     DirectiveModule,
-    RouterModule
+    RouterModule,
+    AppTitleComponent
   ],
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],

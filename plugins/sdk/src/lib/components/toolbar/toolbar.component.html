@@ -2,7 +2,7 @@
   <button *ngIf="showSidebar" mat-icon-button (click)="toggleSidebar.emit()">
     <mat-icon>menu</mat-icon>
   </button>
-  <div>{{ 'application.name' | adfAppConfig }}</div>
+  <app-title></app-title>
 
   <div class="app-toolbar-spacer"></div>
 

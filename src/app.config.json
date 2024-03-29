@@ -17,10 +17,6 @@
     "skipIssuerCheck": true,
     "strictDiscoveryDocumentValidation": false
   },
-  "application": {
-    "name": "My ADF Application",
-    "copyright": "© 2024 Your Copyright Text"
-  },
   "languages": [
     { "key": "en", "label": "English" },
     { "key": "es", "label": "Español" }
