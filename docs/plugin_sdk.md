@@ -18,7 +18,7 @@ Provides access to the navigation management and settings:
 
 ```ts
 class NavigationService {
-  headerEntries$: Observable<AppHeaderEntry[]>;
+  headerEntries$: Observable<AppToolbarEntry[]>;
   sidebarEntries$: Observable<AppSidebarEntry[]>;
 }
 ```

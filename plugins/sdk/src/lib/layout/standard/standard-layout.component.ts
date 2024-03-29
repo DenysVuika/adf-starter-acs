@@ -1,13 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { AppHeaderComponent, AppSidebarComponent } from '../../components';
+import { AppToolbarComponent, AppSidebarComponent } from '../../components';
 import { NavigationService } from '../../services';
 
 @Component({
   selector: 'app-standard-layout',
   standalone: true,
-  imports: [CommonModule, RouterModule, AppHeaderComponent, AppSidebarComponent],
+  imports: [CommonModule, RouterModule, AppToolbarComponent, AppSidebarComponent],
   templateUrl: 'standard-layout.component.html'
 })
 export class StandardLayoutComponent {

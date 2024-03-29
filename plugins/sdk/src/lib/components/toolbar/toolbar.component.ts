@@ -7,10 +7,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { AppHeaderEntry } from '../../types';
+import { AppToolbarEntry } from '../../types';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-toolbar',
   standalone: true,
   imports: [
     CommonModule,
@@ -24,13 +24,13 @@ import { AppHeaderEntry } from '../../types';
     DirectiveModule,
     RouterModule
   ],
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  templateUrl: './toolbar.component.html',
+  styleUrls: ['./toolbar.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AppHeaderComponent {
+export class AppToolbarComponent {
   @Input()
-  entries: Array<AppHeaderEntry> = [];
+  entries: Array<AppToolbarEntry> = [];
 
   @Output()
   toggleSidebar = new EventEmitter<void>();

@@ -16,7 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Move `AppHeaderComponent` component to `@app/sdk`
+- Move `AppToolbarComponent` component to `@app/sdk`
+- Move `SidebarComponent` component to `@app/sdk`
+- Rename App Header to App Toolbar
 
 ## [3.0.0] - 2024-03-12
 
@@ -32,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - improved TypeScript configuration to allow easy plugin library generation
-- rename `src/app/app.menu.ts` to `src/app/app.header.ts`
+- rename `src/app/app.menu.ts` to `src/app/app.toolbar.ts`
 
 ## [2.3.0] - 2024-02-12
 

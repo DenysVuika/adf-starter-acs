@@ -1,7 +1,7 @@
-import { AppHeaderEntry } from '@app/sdk';
+import { AppToolbarEntry } from '@app/sdk';
 
 /** Default global application header entries */
-export const appHeaderEntries: Array<AppHeaderEntry> = [
+export const appToolbarEntries: Array<AppToolbarEntry> = [
   {
     text: 'APP.NAV.DOCUMENTS',
     path: '/documents'

@@ -2,7 +2,7 @@
 
 The recommended configuration entry points are as following:
 
-- `src/app/app.header.ts` - custom application menu entries
+- `src/app/app.toolbar.ts` - custom application menu entries
 - `src/app/app.sidebar.ts` - custom navigation sidebar entries
 - `src/app/app.routes.ts` - application routes
 - `src/app/pages/*` - main content pages, add your components here or modify the existing examples
@@ -67,14 +67,14 @@ At the runtime, it gives the following result:
 
 ![Custom Sidebar Entry](./images//custom-sidebar-entry.png)
 
-## Displaying a Route in the Application Header
+## Displaying a Route in the Application Toolbar
 
-Update the `src/app/app.header.ts` file, to provide a custom Application Header entry:
+Update the `src/app/app.toolbar.ts` file, to provide a custom Application Header entry:
 
 ```ts
-import { AppHeaderEntry } from '@app/sdk';
+import { AppToolbarEntry } from '@app/sdk';
 
-export const appHeaderEntries: Array<AppHeaderEntry> = [
+export const appToolbarEntries: Array<AppToolbarEntry> = [
   // ...
   {
     text: 'My Page',
@@ -85,7 +85,7 @@ export const appHeaderEntries: Array<AppHeaderEntry> = [
 
 Which gives the following result at the runtime:
 
-![Custom App Menu Entry](./images/custom-app-menu-entry.png)
+![Custom App Toolbar Entry](./images/custom-app-menu-entry.png)
 
 You can also display menu entry as an icon button:
 
