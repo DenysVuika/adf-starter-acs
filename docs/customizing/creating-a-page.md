@@ -1,15 +1,4 @@
-# Customizing
-
-The recommended configuration entry points are as following:
-
-- `src/app/app.toolbar.ts` - custom application menu entries
-- `src/app/app.sidebar.ts` - custom navigation sidebar entries
-- `src/app/app.routes.ts` - application routes
-- `src/app/pages/*` - main content pages, add your components here or modify the existing examples
-- `src/app.config.json` - main configuration file for ADF components
-- `src/app.theme.scss` - application theme
-
-## Creating a Page
+# Creating a Page
 
 You can use Nx schematics to generate a standalone Angular component:
 
@@ -28,6 +17,8 @@ CREATE src/app/pages/my-page/my-page.component.html
 CREATE src/app/pages/my-page/my-page.component.spec.ts
 CREATE src/app/pages/my-page/my-page.component.ts
 ```
+
+In order to be displayed, the page needs to be mapped to a route. 
 
 ## Mapping the Page to a Route
 
@@ -65,7 +56,7 @@ export const appSidebarEntries: Array<AppSidebarEntry> = [
 
 At the runtime, it gives the following result:
 
-![Custom Sidebar Entry](./images//custom-sidebar-entry.png)
+![Custom Sidebar Entry](./images/custom-sidebar-entry.png)
 
 ## Displaying a Route in the Application Toolbar
 
@@ -100,56 +91,3 @@ You can also display menu entry as an icon button:
 In this case, the `text` value becomes the button tooltip, and only icon displayed:
 
 ![Header icon button](./images/header-icon-button.png)
-
-## Custom Page Layouts
-
-You can control if your custom page has generic layout or a fully custom one.
-
-Once you click the newly introduced "My Page" link, the component is taking the whole page:
-
-![Route without Layout](./images//route-without-layout.png)
-
-In the `src/app/app.routes.ts`, make your entry a child of the route backed by the `AppLayoutComponent`:
-
-```ts
-export const appRoutes: Routes = [
-  // ...
-  {
-    path: '',
-    component: AppLayoutComponent,
-    children: [
-      {
-        path: '',
-        component: HomeComponent
-      },
-      {
-        path: 'home',
-        component: HomeComponent
-      },
-      {
-        path: 'documents',
-        component: DocumentsComponent,
-        canActivate: [AuthGuardEcm]
-      },
-      {
-        path: 'page1',
-        component: Page1Component
-      },
-      {
-        path: 'page2',
-        component: Page2Component
-      },
-      // Move the entry here
-      {
-        path: 'my-page',
-        component: MyPageComponent
-      }
-    ]
-  }
-  // ...
-];
-```
-
-Upon navigation, the page should be looking like the following now:
-
-![Route with the Layout](./images/route-with-layout.png)

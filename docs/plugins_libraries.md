@@ -54,4 +54,4 @@ Start the application and navigate to the <http://localhost:4200/#/documents-plu
 
 ![Library Component at Runtime](./images/library-component-at-runtime.png)
 
-See [Customizing](./customizing.md) section for more details on basic integration with Sidebar and Application Menu.
+See [Customizing](./customizing/entrypoints.md) section for more details on basic integration with Sidebar and Application Menu.

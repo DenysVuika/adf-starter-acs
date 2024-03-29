@@ -6,7 +6,13 @@
 
 - [Prerequisites](./prerequisites.md)
 - [Quick Start](./quickstart.md)
-- [Customizing](./customizing.md)
+
+# Customizing
+
+- [Entrypoint](./customizing/entrypoints.md)
+- [Creating a Page](./customizing/creating-a-page.md)
+- [Page Layouts](./customizing/page-layouts.md)
+- [Custom Page Layouts](./customizing/custom-page-layouts.md)
 
 # Extensibility
 
