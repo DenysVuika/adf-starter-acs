@@ -1,25 +1,25 @@
 import { Component, ViewChild, Input, ViewEncapsulation, inject } from '@angular/core';
 import { NotificationService, PaginationModule, ToolbarModule } from '@alfresco/adf-core';
 import { BreadcrumbModule, ContentDirectiveModule, DocumentListComponent, DocumentListModule, UploadModule } from '@alfresco/adf-content-services';
-import { PreviewService } from '../../services/preview.service';
+import { PreviewService } from '@app/sdk';
 
 @Component({
-  selector: 'app-documents',
+  selector: 'lib-documents-plugin',
   standalone: true,
   imports: [ToolbarModule, BreadcrumbModule, UploadModule, DocumentListModule, PaginationModule, ContentDirectiveModule],
-  templateUrl: './documents.component.html',
-  styleUrls: ['./documents.component.scss'],
+  templateUrl: './documents-plugin.component.html',
+  styleUrls: ['./documents-plugin.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class DocumentsComponent {
+export class DocumentsPluginComponent {
   private notificationService = inject(NotificationService);
-  private preview = inject(PreviewService);
+  private previewService = inject(PreviewService);
 
   @Input()
   showViewer = false;
 
   @ViewChild('documentList')
-  documentList: DocumentListComponent;
+  documentList!: DocumentListComponent;
 
   uploadSuccess() {
     this.notificationService.openSnackMessage('File uploaded');
@@ -30,7 +30,7 @@ export class DocumentsComponent {
     const entry = event.value.entry;
 
     if (entry && entry.isFile) {
-      this.preview.showResource(entry.id);
+      this.previewService.preview(entry.id);
     }
   }
 }

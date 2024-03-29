@@ -18,7 +18,7 @@
           "error",
           {
             "type": "element",
-            "prefix": ["lib", "app"],
+            "prefix": "lib",
             "style": "kebab-case"
           }
         ]

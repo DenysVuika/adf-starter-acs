@@ -26,7 +26,7 @@
   (preview)="showPreview($event)">
 </adf-document-list>
 
-<adf-pagination [target]="documentList">
+<adf-pagination [target]="documentList" [supportedPageSizes]="[5,10,15,20]">
 </adf-pagination>
 
 <adf-file-uploading-dialog></adf-file-uploading-dialog>

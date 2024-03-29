@@ -29,9 +29,16 @@
   </adf-search-filter-chips>
 </div>
 
-<adf-document-list #documentList [node]="$any(data)" [stickyHeader]="true" [selectionMode]="'multiple'" [sortingMode]="'server'" [sorting]="sorting">
+<adf-document-list
+  #documentList [node]="$any(data)"
+  [stickyHeader]="true"
+  [selectionMode]="'multiple'"
+  [sortingMode]="'server'"
+  [sorting]="sorting"
+  (preview)="showPreview($event)">
   <adf-custom-empty-content-template>
-    <adf-empty-content icon="search" [title]="'Empty Results'" [subtitle]="'No data matching your query'"> </adf-empty-content>
+    <adf-empty-content icon="search" [title]="'Empty Results'"
+                       [subtitle]="'No data matching your query'"></adf-empty-content>
   </adf-custom-empty-content-template>
 </adf-document-list>
 

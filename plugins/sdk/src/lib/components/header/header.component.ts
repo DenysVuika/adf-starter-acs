@@ -6,8 +6,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { AppHeaderEntry } from '@app/sdk';
 import { MatButtonModule } from '@angular/material/button';
+import { AppHeaderEntry } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-header',

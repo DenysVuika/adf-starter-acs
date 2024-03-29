@@ -9,8 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- New `Search Plugin` with minimalistic search experience
+- New `Search Plugin` with minimalistic search experience and Viewer integration
+- New `Documents Plugin` with document list demo and Viewer integration
+- New `Preview Service` in the `@app/sdk` library to provide reusable Viewer APIs
 - Support icon buttons with Header component
+
+### Changed
+
+- Move `AppHeaderComponent` component to `@app/sdk`
 
 ## [3.0.0] - 2024-03-12
 

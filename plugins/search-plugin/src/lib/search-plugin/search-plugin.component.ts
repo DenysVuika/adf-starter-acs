@@ -15,6 +15,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { MatIconModule } from '@angular/material/icon';
 import { DefaultSearchConfiguration } from './search.config';
+import { PreviewService } from '@app/sdk';
 
 @Component({
   selector: 'lib-search-plugin',
@@ -42,6 +43,8 @@ import { DefaultSearchConfiguration } from './search.config';
 export class SearchPluginComponent implements OnInit, OnDestroy {
   private queryBuilder = inject(SearchQueryBuilderService);
   private notifications = inject(NotificationService);
+  private previewService = inject(PreviewService);
+
   private onDestroy$ = new Subject<boolean>();
 
   isLoading = false;
@@ -145,6 +148,14 @@ export class SearchPluginComponent implements OnInit, OnDestroy {
         list: { pagination: { totalItems: 0 }, entries: [] }
       });
       this.isLoading = false;
+    }
+  }
+
+  showPreview(event: any) {
+    const entry = event.value.entry;
+
+    if (entry && entry.isFile) {
+      this.previewService.preview(entry.id);
     }
   }
 }
