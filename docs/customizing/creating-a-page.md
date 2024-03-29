@@ -81,11 +81,14 @@ Which gives the following result at the runtime:
 You can also display menu entry as an icon button:
 
 ```ts
-{
-  text: "Search",
-  path: "/search",
-  icon: "search"
-}
+export const appToolbarEntries: Array<AppToolbarEntry> = [
+  // ...
+  {
+    text: "Search",
+    path: "/search",
+    icon: "search"
+  }
+];
 ```
 
 In this case, the `text` value becomes the button tooltip, and only icon displayed:

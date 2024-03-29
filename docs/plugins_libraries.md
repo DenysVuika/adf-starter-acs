@@ -42,10 +42,12 @@ npx nx generate @nx/angular:library \
 The schematics library is going to update the `src/app/app.routes.ts` with the following entry:
 
 ```ts
-{ 
-  path: 'documents-plugin', 
-  loadChildren: () => import('documents-plugin').then((m) => m.documentsPluginRoutes) 
-},
+export const appRoutes: Routes = [
+  { 
+    path: 'documents-plugin', 
+    loadChildren: () => import('documents-plugin').then((m) => m.documentsPluginRoutes) 
+  }
+]
 ```
 
 If using application layouts, move the newly added route to the corresponding place.
