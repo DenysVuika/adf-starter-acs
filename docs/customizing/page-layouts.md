@@ -1,5 +1,9 @@
 # Page Layouts
 
+Once you click the newly introduced "My Page" link, the component is taking the whole page:
+
+![Route without Layout](./images/route-without-layout.png)
+
 You can control if your custom page has a predefined layout, or a fully custom one.
 
 The application comes with a set of predefined layouts:
@@ -9,19 +13,37 @@ The application comes with a set of predefined layouts:
 
 ## Blank Layout
 
-`@app/sdk`, `component`
-
 Backed by the `BlankLayoutComponent` component, this layout provides just a main content entry on a full page.
 
-You can use this component for cases when your page provides a fully custom content and layout.
+You can use this component for cases when your page provides a fully custom content and layout,
+for a single or multiple child routes.
 
-Once you click the newly introduced "My Page" link, the component is taking the whole page:
+```ts
+import { BlankLayoutComponent } from '@app/sdk';
 
-![Route without Layout](./images/route-without-layout.png)
+export const appRoutes: Routes = [
+  // Using `Standard` layout for all child routes/components
+  // ...
+  
+  // Using `Blank` layout for all child routes/components
+  {
+    path: 'pages',
+    component: BlankLayoutComponent,
+    children: [
+      {
+        path: 'page1',
+        component: Page1Component
+      }
+    ]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  }
+];
+```
 
 ## Standard Layout
-
-`@app/sdk`, `component`
 
 Backed by the `StandardLayoutComponent` component, this layout provides the following blocks:
 
@@ -36,6 +58,7 @@ import { StandardLayoutComponent } from '@app/sdk';
 
 export const appRoutes: Routes = [
   // ...
+  // Using `Standard` layout for all child routes/components
   {
     path: '',
     component: StandardLayoutComponent,
