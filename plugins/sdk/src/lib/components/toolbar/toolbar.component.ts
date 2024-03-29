@@ -32,6 +32,9 @@ export class AppToolbarComponent {
   @Input()
   entries: Array<AppToolbarEntry> = [];
 
+  @Input()
+  showSidebar = true;
+
   @Output()
   toggleSidebar = new EventEmitter<void>();
 }

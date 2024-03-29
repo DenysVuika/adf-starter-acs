@@ -1,4 +1,11 @@
-<app-toolbar class="page-header" [entries]="headerEntries$ | async" (toggleSidebar)="sidebar.toggle()"></app-toolbar>
-<app-sidebar #sidebar [entries]="sidebarEntries$ | async">
+<app-toolbar
+  *ngIf="showToolbar"
+  class="page-header"
+  [entries]="headerEntries$ | async"
+  [showSidebar]="showSidebar"
+  (toggleSidebar)="sidebar?.toggle()">
+</app-toolbar>
+
+<app-sidebar *ngIf="showSidebar" #sidebar [entries]="sidebarEntries$ | async">
   <router-outlet id="main-content-outlet"></router-outlet>
 </app-sidebar>

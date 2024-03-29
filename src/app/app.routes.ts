@@ -14,6 +14,13 @@ export const appRoutes: Routes = [
   {
     path: '',
     component: StandardLayoutComponent,
+    // optional: configuring the StandardLayoutComponent settings
+    data: {
+      layout: {
+        showToolbar: true,
+        showSidebar: true
+      }
+    },
     children: [
       {
         path: '',
@@ -62,5 +69,10 @@ export const appRoutes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  // Redirect every undefined route to the root
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];

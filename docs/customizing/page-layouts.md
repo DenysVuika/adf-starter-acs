@@ -98,3 +98,34 @@ export const appRoutes: Routes = [
 Upon navigation, the page should be looking like the following now:
 
 ![Route with the Layout](./images/route-with-layout.png)
+
+### Configuring Standard Layout
+
+You can tune the Standard Layout settings by declaring a route data with the `layout` object
+
+For example:
+
+```ts
+export const appRoutes: Routes = [
+  {
+    path: '',
+    component: StandardLayoutComponent,
+    
+    // optional: configuring the StandardLayoutComponent settings
+    data: {
+      layout: {
+        showToolbar: true,
+        showSidebar: true
+      }
+    },
+    children: [
+      // ...
+    ]
+  }
+];
+```
+
+Supported properties:
+
+- `showToolbar` **boolean** - display toolbar; defaults to `true`
+- `showSidebar` **boolean** - display sidebar, when switched off the toolbar is going to hide the toggle button as well; defaults to `true`

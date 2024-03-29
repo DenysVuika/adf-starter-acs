@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <button mat-icon-button (click)="toggleSidebar.emit()">
+  <button *ngIf="showSidebar" mat-icon-button (click)="toggleSidebar.emit()">
     <mat-icon>menu</mat-icon>
   </button>
   <div>{{ 'application.name' | adfAppConfig }}</div>
