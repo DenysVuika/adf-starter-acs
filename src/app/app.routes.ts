@@ -5,11 +5,12 @@ import { LoginComponent } from './components/login/login.component';
 import { PreviewComponent } from './components/preview/preview.component';
 import { Page1Component } from './pages/page1/page1.component';
 import { Page2Component } from './pages/page2/page2.component';
-import { StandardLayoutComponent } from '@app/sdk';
+import { StandardLayoutComponent, BlankLayoutComponent } from '@app/sdk';
 
 /** Global application routes */
 export const appRoutes: Routes = [
   { path: 'preview/:nodeId', component: PreviewComponent, canActivate: [AuthGuardEcm], outlet: 'overlay' },
+  // Using `Standard` layout for all child routes/components
   {
     path: '',
     component: StandardLayoutComponent,
@@ -44,6 +45,17 @@ export const appRoutes: Routes = [
         path: 'search',
         canActivate: [AuthGuardEcm],
         loadChildren: () => import('search-plugin').then((m) => m.searchPluginRoutes)
+      }
+    ]
+  },
+  // Using `Blank` layout for all child routes/components
+  {
+    path: 'pages',
+    component: BlankLayoutComponent,
+    children: [
+      {
+        path: 'page1',
+        component: Page1Component
       }
     ]
   },
