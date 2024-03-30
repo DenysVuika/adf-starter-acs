@@ -13,12 +13,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New `Documents Plugin` with document list demo and Viewer integration
 - New `Preview Service` in the `@app/sdk` library to provide reusable Viewer APIs
 - Support icon buttons with Header component
+- Support for application config file `src/app/app.config.js`
+- Reusable page layouts and building blocks
+- New documentation sections for custom and standard page layouts
 
 ### Changed
 
 - Move `AppToolbarComponent` component to `@app/sdk`
 - Move `SidebarComponent` component to `@app/sdk`
 - Rename App Header to App Toolbar
+- The application title is clickable now and navigates to app root
 
 ## [3.0.0] - 2024-03-12
 
