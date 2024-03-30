@@ -1,6 +1,5 @@
 <app-toolbar
   *ngIf="showToolbar"
-  class="page-header"
   [entries]="headerEntries$ | async"
   [showSidebar]="showSidebar"
   (toggleSidebar)="sidebar?.toggle()">
