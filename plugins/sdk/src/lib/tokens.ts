@@ -1,9 +1,5 @@
 import { InjectionToken, Provider } from '@angular/core';
 
-export const APP_NAME = new InjectionToken<string>('Application title');
-export const APP_DESCRIPTION = new InjectionToken<string>('Application description');
-export const APP_COPYRIGHT = new InjectionToken<string>('Application copyright');
-
 /**
  * Application configuration properties
  */
@@ -16,6 +12,11 @@ export type AppConfigProps = {
   copyright?: string;
 };
 
+export const APP_CONFIG = new InjectionToken<AppConfigProps>('Application configuration');
+export const APP_NAME = new InjectionToken<string>('Application title');
+export const APP_DESCRIPTION = new InjectionToken<string>('Application description');
+export const APP_COPYRIGHT = new InjectionToken<string>('Application copyright');
+
 /**
  * Provides runtime configuration settings for the application.
  * Generates a set of injection tokens for supported application settings.
@@ -23,7 +24,7 @@ export type AppConfigProps = {
  * @param cfg configuration properties
  */
 export function provideAppConfig(cfg: AppConfigProps): Array<Provider> {
-  const result: Provider[] = [];
+  const result: Provider[] = [{ provide: APP_CONFIG, useValue: cfg }];
 
   if (cfg.name) {
     result.push({ provide: APP_NAME, useValue: cfg.name });

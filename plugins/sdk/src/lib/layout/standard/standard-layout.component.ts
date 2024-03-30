@@ -41,8 +41,6 @@ export class StandardLayoutComponent implements OnInit {
   }
 
   private applySettings(settings: StandardLayoutSettings) {
-    console.log(settings);
-
     if (settings.showSidebar !== undefined) {
       this.showSidebar = settings.showSidebar;
     }
