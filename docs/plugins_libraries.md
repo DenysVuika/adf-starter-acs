@@ -42,10 +42,12 @@ npx nx generate @nx/angular:library \
 The schematics library is going to update the `src/app/app.routes.ts` with the following entry:
 
 ```ts
-{ 
-  path: 'documents-plugin', 
-  loadChildren: () => import('documents-plugin').then((m) => m.documentsPluginRoutes) 
-},
+export const appRoutes: Routes = [
+  { 
+    path: 'documents-plugin', 
+    loadChildren: () => import('documents-plugin').then((m) => m.documentsPluginRoutes) 
+  }
+]
 ```
 
 If using application layouts, move the newly added route to the corresponding place.
@@ -54,4 +56,4 @@ Start the application and navigate to the <http://localhost:4200/#/documents-plu
 
 ![Library Component at Runtime](./images/library-component-at-runtime.png)
 
-See [Customizing](./customizing.md) section for more details on basic integration with Sidebar and Application Menu.
+See [Customizing](./customizing/entrypoints.md) section for more details on basic integration with Sidebar and Application Menu.

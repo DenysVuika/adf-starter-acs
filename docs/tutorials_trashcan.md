@@ -41,13 +41,14 @@ Update application routes config `src/app/app.routes.ts`, and add the `trashcan`
 
 ```ts
 import { trashcanPluginRoutes } from 'trashcan-plugin';
+import { StandardLayoutComponent } from '@app/sdk';
 
 /** Global application routes */
 export const appRoutes: Routes = [
   // ...
   {
     path: '',
-    component: AppLayoutComponent,
+    component: StandardLayoutComponent,
     children: [
       // ...
       { path: 'trashcan', children: trashcanPluginRoutes, canActivate: [AuthGuardEcm] }
