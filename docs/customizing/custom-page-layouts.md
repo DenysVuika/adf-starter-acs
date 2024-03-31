@@ -1,3 +1,105 @@
 # Custom Page Layouts
 
-> Coming soon
+Page Layouts are regular Angular components. 
+There are no restrictions to the content of the Layout components.
+
+Each layout must provide a RouterOutlet with the ID `main-content-outlet`.
+That is where the content of the page is projected. 
+
+```html
+<router-outlet id="main-content-outlet"></router-outlet>
+```
+
+The `@app/sdk` library provides a set of components and services you can use to assemble custom layouts.
+
+## Components
+
+- `<app-toolbar />` - application toolbar
+- `<app-sidebar />` - application sidebar
+- `<app-title />` - application title
+
+## Services
+
+- Navigation Service
+- Preview Service
+
+## Creating Basic Layout
+
+The following structure resembles the `Standard Layout` component coming with the `@app/sdk` library:
+
+```html
+<app-toolbar
+  [entries]="[/* array of AppToolbarEntry */]"
+  (toggleSidebar)="sidebar?.toggle()">
+</app-toolbar>
+
+<app-sidebar #sidebar [entries]="[/* array of AppToolbarEntry */]">
+  <router-outlet id="main-content-outlet"></router-outlet>
+</app-sidebar>
+```
+
+If you want to render the runtime set of toolbar buttons, use the `NavigationService` to access all the entries:
+
+```ts
+export class MyCustomLayout {
+  private navigationService = inject(NavigationService);
+
+  headerEntries$ = this.navigationService.headerEntries$;
+  sidebarEntries$ = this.navigationService.sidebarEntries$;
+}
+```
+
+Next, forward the sidebar and header entries to the corresponding components:
+
+```html
+<app-toolbar
+  [entries]="headerEntries$ | async"
+  (toggleSidebar)="sidebar?.toggle()">
+</app-toolbar>
+
+<app-sidebar #sidebar [entries]="sidebarEntries$ | async">
+  <router-outlet id="main-content-outlet"></router-outlet>
+</app-sidebar>
+```
+
+You can modify the entry collections as part of your layout implementation, or plugin requirements.
+
+### Integrating with Application
+
+```ts
+export const appRoutes: Routes = [
+  // Using custom layout for all child routes/components
+  {
+    path: 'pages',
+    component: MyCustomLayout,
+    children: [
+      {
+        path: 'page1',
+        component: Page1Component
+      }
+    ]
+  }
+]
+```
+
+### Integrating with the Plugin
+
+If your plugin provides a nested structure of routes and components,
+you can modify the `src/lib/lib.routes.ts` file to set the global layout for all your plugin routes: 
+
+```ts
+import { Route } from '@angular/router';
+
+export const myPluginRoutes: Route[] = [
+  { 
+    path: '/my-plugin', 
+    component: MyCustomLayout,
+    children: [
+      {
+        path: '/page1',
+        component: MyCustomPlugin
+      }
+    ]
+  }
+];
+```

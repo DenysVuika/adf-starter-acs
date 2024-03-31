@@ -72,7 +72,36 @@ class AppModule {}
       /*...*/
     ])
   ]
-  ]
 })
 export class Plugin1Module {}
+```
+
+## Preview Service
+
+Provides access to global Viewer APIs:
+
+```ts
+class PreviewService {
+  preview: (...params: any[]) => Promise<any>;
+}
+```
+
+Note that the Viewer implementation can be customized at the application level.
+
+Example:
+
+```ts
+import { PreviewService } from '@app/sdk';
+
+class MyComponent {
+  private previewService = inject(PreviewService);
+
+  onPreviewClick(event: any) {
+    const entry = event.value.entry;
+
+    if (entry && entry.isFile) {
+      this.previewService.preview(entry.id);
+    }
+  }
+}
 ```
