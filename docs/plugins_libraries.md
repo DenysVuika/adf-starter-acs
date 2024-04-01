@@ -1,4 +1,4 @@
-# Plugin Libraries
+# Plugins as Libraries
 
 To generate a library, you can use Nx Console for the VS Code or IntelliJ:
 

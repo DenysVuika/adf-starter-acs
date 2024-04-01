@@ -17,9 +17,13 @@
 
 # Extensibility
 
-- [Plugins](./plugins.md)
-  - [Plugin Libraries](./plugins_libraries.md)
-  - [Plugin SDK](./plugin_sdk.md)
-  - [Distributing Plugins](./plugins_distributing.md)
-- [Tutorials](./tutorials.md)
-  - [Trashcan Plugin](./tutorials_trashcan.md)
+- [Plugins as Libraries](./plugins_libraries.md)
+- [Distributing Plugins](./plugins_distributing.md)
+
+# Plugin SDK
+
+- [Navigation Service](sdk/sdk-navigation-service.md)
+
+# Tutorials
+
+- [Trashcan Plugin](./tutorials_trashcan.md)
