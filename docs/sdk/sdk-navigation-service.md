@@ -1,15 +1,12 @@
-# Plugin SDK
+# Navigation Service
+
+`Service`
 
 <div class="warning">
 This section is experimental
 
 The content and API in this chapter are subject to change.
-
 </div>
-
-To facilitate plugin development, the project comes with the SDK library: `@app/sdk`.
-
-## Navigation Service
 
 Provides access to the navigation management and settings:
 
