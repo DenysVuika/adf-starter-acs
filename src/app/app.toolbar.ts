@@ -4,19 +4,19 @@ import { AppToolbarEntry } from '@app/sdk';
 export const appToolbarEntries: Array<AppToolbarEntry> = [
   {
     text: 'APP.NAV.DOCUMENTS',
-    path: '/documents'
+    action: ['router.navigate', ['/documents']]
   },
   {
     text: 'Page 1',
-    path: '/page1'
+    action: ['router.navigate', ['/page1']]
   },
   {
     text: 'Page 2',
-    path: '/page2'
+    action: ['router.navigate', ['/page2']]
   },
   {
-    path: '/search',
     icon: 'search',
-    text: 'Search'
+    text: 'Search',
+    action: ['router.navigate', ['/search']]
   }
 ];
