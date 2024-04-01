@@ -2,8 +2,8 @@
 
 The application configuration files are located at the `src/app/*` and provide support for the following features:
 
-- `app.commands.ts` - globally registered application commands
-- `app.config.ts` - global application configuration
+- `app.commands.ts` - globally registered application commands (see [Command Service](../sdk/sdk-command-service.md))
+- `app.config.ts` - global application configuration (see [App Config](./app-config.md))
 - `app.toolbar.ts` - application menu entries
 - `app.sidebar.ts` - navigation sidebar entries
 - `app.routes.ts` - application routes
