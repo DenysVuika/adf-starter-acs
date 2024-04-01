@@ -1,11 +1,15 @@
 # Configuration Settings
 
-The recommended configuration entry points are as following:
+The application configuration files are located at the `src/app/*` and provide support for the following features:
 
-- `src/app/app.config.ts` - global application configuration
-- `src/app/app.toolbar.ts` - custom application menu entries
-- `src/app/app.sidebar.ts` - custom navigation sidebar entries
-- `src/app/app.routes.ts` - application routes
-- `src/app/pages/*` - main content pages, add your components here or modify the existing examples
+- `app.commands.ts` - globally registered application commands (see [Command Service](../sdk/sdk-command-service.md))
+- `app.config.ts` - global application configuration (see [App Config](./app-config.md))
+- `app.toolbar.ts` - application menu entries
+- `app.sidebar.ts` - navigation sidebar entries
+- `app.routes.ts` - application routes
+- `pages/*` - main content pages, add your components here or modify the existing examples
+
+Additional resources:
+
 - `src/app.config.json` - main configuration file for ADF components
 - `src/app.theme.scss` - application theme

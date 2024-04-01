@@ -2,25 +2,28 @@ import { AppSidebarEntry } from '@app/sdk';
 
 /** Default global application sidebar entries */
 export const appSidebarEntries: Array<AppSidebarEntry> = [
+  // Documents Plugin
   {
     text: 'APP.NAV.DOCUMENTS',
-    path: '/documents',
-    icon: 'text_snippet'
+    icon: 'text_snippet',
+    action: ['router.navigate', ['/documents']]
   },
+  // Custom application Page 1
   {
     text: 'Page 1',
-    path: '/page1',
-    icon: 'task'
+    icon: 'task',
+    action: ['router.navigate', ['/page1']]
   },
+  // Custom application Page 2
   {
     text: 'Page 2',
-    path: '/page2',
-    icon: 'assignment'
+    icon: 'assignment',
+    action: ['router.navigate', ['/page2']]
   },
   // Trashcan Plugin
   {
     text: 'Trashcan',
-    path: '/trashcan',
-    icon: 'delete'
+    icon: 'delete',
+    action: ['router.navigate', ['/trashcan']]
   }
 ];

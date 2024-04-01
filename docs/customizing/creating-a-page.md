@@ -48,8 +48,8 @@ export const appSidebarEntries: Array<AppSidebarEntry> = [
   // ...
   {
     text: 'My Page',
-    path: '/my-page',
-    icon: 'assignment'
+    icon: 'assignment',
+    action: ['router.navigate', ['/my-page']]
   }
 ];
 ```
@@ -69,7 +69,7 @@ export const appToolbarEntries: Array<AppToolbarEntry> = [
   // ...
   {
     text: 'My Page',
-    path: '/my-page'
+    action: ['router.navigate', ['/my-page']]
   }
 ];
 ```
@@ -85,8 +85,8 @@ export const appToolbarEntries: Array<AppToolbarEntry> = [
   // ...
   {
     text: "Search",
-    path: "/search",
-    icon: "search"
+    icon: "search",
+    action: ['router.navigate', ['/search']]
   }
 ];
 ```

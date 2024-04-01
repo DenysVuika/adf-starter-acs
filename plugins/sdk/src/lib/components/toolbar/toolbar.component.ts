@@ -1,14 +1,14 @@
-import { AppConfigModule, DirectiveModule, LanguageMenuModule } from '@alfresco/adf-core';
-import { Component, Output, ViewEncapsulation, EventEmitter, Input } from '@angular/core';
+import { DirectiveModule, LanguageMenuModule } from '@alfresco/adf-core';
+import { Component, Output, ViewEncapsulation, EventEmitter, Input, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { AppToolbarEntry } from '../../types';
 import { AppTitleComponent } from '../title';
+import { CommandService } from '../../services/commands/command.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -21,9 +21,7 @@ import { AppTitleComponent } from '../title';
     MatButtonModule,
     TranslateModule,
     LanguageMenuModule,
-    AppConfigModule,
     DirectiveModule,
-    RouterModule,
     AppTitleComponent
   ],
   templateUrl: './toolbar.component.html',
@@ -31,12 +29,24 @@ import { AppTitleComponent } from '../title';
   encapsulation: ViewEncapsulation.None
 })
 export class AppToolbarComponent {
+  private commandService = inject(CommandService);
+
   @Input()
-  entries: Array<AppToolbarEntry> = [];
+  entries!: Array<AppToolbarEntry> | null;
 
   @Input()
   showSidebar = true;
 
   @Output()
   toggleSidebar = new EventEmitter<void>();
+
+  runAction(entry: AppToolbarEntry) {
+    if (entry.action) {
+      const [command, params] = entry.action;
+
+      if (command) {
+        this.commandService.execute(command, params);
+      }
+    }
+  }
 }

@@ -1,7 +1,7 @@
 import { Component, ViewChild, Input, ViewEncapsulation, inject } from '@angular/core';
 import { NotificationService, PaginationModule, ToolbarModule } from '@alfresco/adf-core';
 import { BreadcrumbModule, ContentDirectiveModule, DocumentListComponent, DocumentListModule, UploadModule } from '@alfresco/adf-content-services';
-import { PreviewService } from '@app/sdk';
+import { CommandService } from '@app/sdk';
 
 @Component({
   selector: 'lib-documents-plugin',
@@ -13,7 +13,7 @@ import { PreviewService } from '@app/sdk';
 })
 export class DocumentsPluginComponent {
   private notificationService = inject(NotificationService);
-  private previewService = inject(PreviewService);
+  private commandService = inject(CommandService);
 
   @Input()
   showViewer = false;
@@ -30,7 +30,7 @@ export class DocumentsPluginComponent {
     const entry = event.value.entry;
 
     if (entry && entry.isFile) {
-      this.previewService.preview(entry.id);
+      this.commandService.execute('preview.node', [entry.id]);
     }
   }
 }

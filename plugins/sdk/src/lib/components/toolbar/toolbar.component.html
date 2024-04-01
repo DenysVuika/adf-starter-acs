@@ -6,15 +6,17 @@
 
   <div class="app-toolbar-spacer"></div>
 
-  <ng-container *ngFor="let entry of entries">
-    <ng-container *ngIf="entry.icon; else text_item">
-      <button mat-icon-button [routerLink]="entry.path" [title]="entry.text | translate">
-        <mat-icon>{{ entry.icon }}</mat-icon>
-      </button>
+  <ng-container *ngIf="entries">
+    <ng-container *ngFor="let entry of entries">
+      <ng-container *ngIf="entry.icon; else text_item">
+        <button mat-icon-button [title]="entry.text | translate" (click)="runAction(entry)">
+          <mat-icon>{{ entry.icon }}</mat-icon>
+        </button>
+      </ng-container>
+      <ng-template #text_item>
+        <button mat-button (click)="runAction(entry)">{{ entry.text | translate }}</button>
+      </ng-template>
     </ng-container>
-    <ng-template #text_item>
-      <button mat-button [routerLink]="entry.path">{{ entry.text | translate }}</button>
-    </ng-template>
   </ng-container>
 
   <button mat-icon-button [matMenuTriggerFor]="menu">

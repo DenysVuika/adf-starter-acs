@@ -1,15 +1,12 @@
-# Plugin SDK
+# Navigation Service
+
+`Service`
 
 <div class="warning">
 This section is experimental
 
 The content and API in this chapter are subject to change.
-
 </div>
-
-To facilitate plugin development, the project comes with the SDK library: `@app/sdk`.
-
-## Navigation Service
 
 Provides access to the navigation management and settings:
 
@@ -74,34 +71,4 @@ class AppModule {}
   ]
 })
 export class Plugin1Module {}
-```
-
-## Preview Service
-
-Provides access to global Viewer APIs:
-
-```ts
-class PreviewService {
-  preview: (...params: any[]) => Promise<any>;
-}
-```
-
-Note that the Viewer implementation can be customized at the application level.
-
-Example:
-
-```ts
-import { PreviewService } from '@app/sdk';
-
-class MyComponent {
-  private previewService = inject(PreviewService);
-
-  onPreviewClick(event: any) {
-    const entry = event.value.entry;
-
-    if (entry && entry.isFile) {
-      this.previewService.preview(entry.id);
-    }
-  }
-}
 ```
