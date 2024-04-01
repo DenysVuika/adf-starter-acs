@@ -30,14 +30,14 @@ import { provideHeaderEntries, provideSidebarEntries } from '@app/sdk';
     provideHeaderEntries([
       {
         text: 'Extra Page 1',
-        path: '/extra-page-1'
+        action: ['router.navigate', ['/extra-page-1']]
       }
     ]),
     provideSidebarEntries([
       {
         text: 'Extra Page 1',
-        path: '/extra-page-1',
-        icon: 'assignment'
+        icon: 'assignment',
+        action: ['router.navigate', ['/extra-page-1']]
       }
     ])
   ]
