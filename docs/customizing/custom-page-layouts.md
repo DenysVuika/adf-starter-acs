@@ -64,7 +64,7 @@ Next, forward the sidebar and header entries to the corresponding components:
 
 You can modify the entry collections as part of your layout implementation, or plugin requirements.
 
-### Integrating with Application
+### Integrating at the  Application Level
 
 ```ts
 export const appRoutes: Routes = [
@@ -82,7 +82,7 @@ export const appRoutes: Routes = [
 ]
 ```
 
-### Integrating with the Plugin
+### Integrating at the Plugin level
 
 If your plugin provides a nested structure of routes and components,
 you can modify the `src/lib/lib.routes.ts` file to set the global layout for all your plugin routes: 
