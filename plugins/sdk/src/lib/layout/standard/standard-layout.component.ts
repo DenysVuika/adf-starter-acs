@@ -1,7 +1,7 @@
-import { Component, inject, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, inject, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { AppToolbarComponent, AppSidebarComponent } from '../../components';
+import { AppSidebarComponent, AppToolbarComponent } from '../../components';
 import { NavigationService } from '../../services';
 
 export type StandardLayoutSettings = {
@@ -13,7 +13,9 @@ export type StandardLayoutSettings = {
   selector: 'app-standard-layout',
   standalone: true,
   imports: [CommonModule, RouterModule, AppToolbarComponent, AppSidebarComponent],
-  templateUrl: 'standard-layout.component.html'
+  templateUrl: 'standard-layout.component.html',
+  styleUrls: ['standard-layout.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class StandardLayoutComponent implements OnInit {
   private navigationService = inject(NavigationService);
