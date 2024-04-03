@@ -1,0 +1,69 @@
+<div class="lib-calendar-actions">
+  <button
+    mat-stroked-button
+    color="accent"
+    mwlCalendarToday
+    [(viewDate)]="viewDate">
+    <mat-icon>calendar_today</mat-icon>
+    Today
+  </button>
+
+  <button
+    mat-stroked-button
+    mwlCalendarPreviousView
+    [view]="view"
+    [(viewDate)]="viewDate"
+    (viewDateChange)="closeOpenMonthViewDay()">
+    Previous
+  </button>
+
+  <button
+    mat-stroked-button
+    mwlCalendarNextView
+    [view]="view"
+    [(viewDate)]="viewDate"
+    (viewDateChange)="closeOpenMonthViewDay()">
+    Next
+  </button>
+
+  <h3 class="lib-calendar-title">
+    {{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}
+  </h3>
+
+  <mat-button-toggle-group [(ngModel)]="view" aria-label="View">
+    <mat-button-toggle value="{{ CalendarView.Month }}">Month</mat-button-toggle>
+    <mat-button-toggle value="{{ CalendarView.Week }}">Week</mat-button-toggle>
+    <mat-button-toggle value="{{ CalendarView.Day }}">Day</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+
+<div class="lib-calendar-content" [ngSwitch]="view">
+  <mwl-calendar-month-view
+    *ngSwitchCase="CalendarView.Month"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    [activeDayIsOpen]="activeDayIsOpen"
+    (dayClicked)="dayClicked($event.day)"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-month-view>
+
+  <mwl-calendar-week-view
+    *ngSwitchCase="CalendarView.Week"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-week-view>
+
+  <mwl-calendar-day-view
+    *ngSwitchCase="CalendarView.Day"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-day-view>
+</div>

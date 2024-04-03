@@ -1,0 +1,29 @@
+@import "angular-calendar/css/angular-calendar.css";
+
+lib-calendar-plugin {
+  .lib-calendar-actions {
+    margin: 8px;
+    display: flex;
+    flex-direction: row;
+
+    & button {
+      margin-right: 4px;
+    }
+  }
+
+  .cal-event-action {
+    color: white;
+  }
+
+  .lib-calendar-title {
+    flex: auto;
+    text-align: center;
+  }
+
+  .lib-calendar-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+}
