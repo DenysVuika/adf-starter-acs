@@ -2,7 +2,7 @@
 
 The application configuration files are located at the `src/app/*` and provide support for the following features:
 
-- `app.actions.ts` - globally registered actions (see [Action Service](../sdk/actio n-service.md))
+- `app.actions.ts` - globally registered actions (see [Action Service](../sdk/action-service.md))
 - `app.config.ts` - global application configuration (see [App Config](./app-config.md))
 - `app.toolbar.ts` - application menu entries
 - `app.sidebar.ts` - navigation sidebar entries

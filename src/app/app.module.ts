@@ -15,7 +15,7 @@ registerLocaleData(localeEs);
 
 import { provideSidebarEntries, provideHeaderEntries, provideAppConfig, provideActions } from '@app/sdk';
 import { appSidebarEntries } from './app.sidebar';
-import { appToolbarEntries } from './app.toolbar';
+import { appToolbar } from './app.toolbar';
 import { appConfig } from './app.config';
 import { appActions } from './appActions';
 
@@ -34,7 +34,7 @@ import { appActions } from './appActions';
   declarations: [AppComponent],
   providers: [
     provideTranslations('app', 'assets'),
-    provideHeaderEntries(appToolbarEntries),
+    provideHeaderEntries(appToolbar),
     provideSidebarEntries(appSidebarEntries),
     provideAppConfig(appConfig),
     provideActions(appActions)

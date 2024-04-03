@@ -135,7 +135,7 @@ For example toolbar or sidebar components:
 import { AppToolbarEntry } from '@app/sdk';
 
 /** Default global application header entries */
-export const appToolbarEntries: Array<AppToolbarEntry> = [
+export const appToolbar: Array<AppToolbarEntry> = [
   {
     text: 'Page 1',
     action: ['router.navigate', ['/page1']]

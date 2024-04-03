@@ -37,7 +37,7 @@ export const appRoutes: Routes = [
 ];
 ```
 
-## Displaying a Route in the Sidebar
+## Sidebar
 
 Update the `src/app/app.sidebar.ts` file, to provide a custom Sidebar entry:
 
@@ -58,14 +58,14 @@ At the runtime, it gives the following result:
 
 ![Custom Sidebar Entry](./images/custom-sidebar-entry.png)
 
-## Displaying a Route in the Application Toolbar
+## Toolbar
 
 Update the `src/app/app.toolbar.ts` file, to provide a custom Application Header entry:
 
 ```ts
 import { AppToolbarEntry } from '@app/sdk';
 
-export const appToolbarEntries: Array<AppToolbarEntry> = [
+export const appToolbar: Array<AppToolbarEntry> = [
   // ...
   {
     text: 'My Page',
@@ -81,7 +81,7 @@ Which gives the following result at the runtime:
 You can also display menu entry as an icon button:
 
 ```ts
-export const appToolbarEntries: Array<AppToolbarEntry> = [
+export const appToolbar: Array<AppToolbarEntry> = [
   // ...
   {
     text: "Search",

@@ -13,7 +13,7 @@
 - [App Config](./customizing/app-config.md)
 - [Creating a Page](./customizing/creating-a-page.md)
 - [Page Layouts](./customizing/page-layouts.md)
-- [Custom Page Layouts](./customizing/custom-page-layouts.md)
+  - [Custom Layouts](./customizing/custom-page-layouts.md)
 
 # Extensibility
 
