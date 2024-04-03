@@ -1,6 +1,17 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarModule, CalendarView } from 'angular-calendar';
+import {
+  CalendarA11y,
+  CalendarDateFormatter,
+  CalendarEvent,
+  CalendarEventAction,
+  CalendarEventTimesChangedEvent,
+  CalendarEventTitleFormatter,
+  CalendarModule,
+  CalendarUtils,
+  CalendarView,
+  DateAdapter
+} from 'angular-calendar';
 import { addDays, addHours, endOfMonth, isSameDay, isSameMonth, startOfDay, subDays } from 'date-fns';
 import { EventColor } from 'calendar-utils';
 import { Subject } from 'rxjs';
@@ -8,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { FormsModule } from '@angular/forms';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 const colors: Record<string, EventColor> = {
   red: {
@@ -28,6 +40,14 @@ const colors: Record<string, EventColor> = {
   selector: 'lib-calendar-plugin',
   standalone: true,
   imports: [CommonModule, CalendarModule, MatButtonModule, MatIconModule, MatButtonToggleModule, FormsModule],
+  providers: [
+    // This removes the need using CalendarModule.forRoot() in the main application module
+    { provide: DateAdapter, useFactory: adapterFactory },
+    CalendarEventTitleFormatter,
+    CalendarDateFormatter,
+    CalendarUtils,
+    CalendarA11y
+  ],
   templateUrl: './calendar-plugin.component.html',
   styleUrls: ['./calendar-plugin.component.css'],
   encapsulation: ViewEncapsulation.None
@@ -39,7 +59,7 @@ export class CalendarPluginComponent {
   CalendarView = CalendarView;
 
   refresh = new Subject<void>();
-  activeDayIsOpen: boolean = true;
+  activeDayIsOpen = true;
 
   actions: CalendarEventAction[] = [
     // {
