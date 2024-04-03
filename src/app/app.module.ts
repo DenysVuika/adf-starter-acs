@@ -13,11 +13,11 @@ import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 registerLocaleData(localeEs);
 
-import { provideSidebarEntries, provideHeaderEntries, provideAppConfig, provideAppCommands } from '@app/sdk';
+import { provideSidebarEntries, provideHeaderEntries, provideAppConfig, provideActions } from '@app/sdk';
 import { appSidebarEntries } from './app.sidebar';
 import { appToolbarEntries } from './app.toolbar';
 import { appConfig } from './app.config';
-import { appCommands } from './app.commands';
+import { appActions } from './appActions';
 
 @NgModule({
   imports: [
@@ -37,7 +37,7 @@ import { appCommands } from './app.commands';
     provideHeaderEntries(appToolbarEntries),
     provideSidebarEntries(appSidebarEntries),
     provideAppConfig(appConfig),
-    provideAppCommands(appCommands)
+    provideActions(appActions)
   ],
   bootstrap: [AppComponent]
 })

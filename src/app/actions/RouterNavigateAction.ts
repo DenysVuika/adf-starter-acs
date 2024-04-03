@@ -1,17 +1,17 @@
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Command } from '@app/sdk';
+import { Action } from '@app/sdk';
 
-export class RouterNavigateCommand implements Command {
+export class RouterNavigateAction implements Action<any[], Promise<boolean>> {
   private router = inject(Router);
 
   get name(): string {
     return 'router.navigate';
   }
 
-  execute(params?: unknown[]): void {
+  execute(params?: any[]): Promise<boolean> {
     if (params) {
-      void this.router.navigate(params);
+      return this.router.navigate(params);
     }
   }
 }

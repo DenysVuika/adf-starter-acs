@@ -5,7 +5,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppSidebarEntry, AppToolbarEntry } from '../../types';
-import { CommandService } from '../../services';
+import { ActionService } from '../../services';
 
 @Component({
   selector: 'app-sidebar',
@@ -16,7 +16,7 @@ import { CommandService } from '../../services';
   encapsulation: ViewEncapsulation.None
 })
 export class AppSidebarComponent {
-  private commandService = inject(CommandService);
+  private commandService = inject(ActionService);
 
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
