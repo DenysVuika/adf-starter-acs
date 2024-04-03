@@ -44,6 +44,10 @@ export const appRoutes: Routes = [
         component: Page2Component
       },
       {
+        path: 'calendar',
+        loadChildren: () => import('calendar-plugin').then((m) => m.calendarPluginRoutes)
+      },
+      {
         path: 'trashcan',
         canActivate: [AuthGuardEcm],
         loadChildren: () => import('trashcan-plugin').then((m) => m.trashcanPluginRoutes)

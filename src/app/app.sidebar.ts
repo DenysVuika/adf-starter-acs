@@ -8,6 +8,12 @@ export const appSidebar: Array<AppSidebarEntry> = [
     icon: 'text_snippet',
     action: ['router.navigate', ['/documents']]
   },
+  // Calendar Plugin
+  {
+    text: 'Calendar',
+    icon: 'calendar_month',
+    action: ['router.navigate', ['/calendar']]
+  },
   // Custom application Page 1
   {
     text: 'Page 1',
