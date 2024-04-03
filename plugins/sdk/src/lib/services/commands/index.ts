@@ -1,3 +1,3 @@
-export * from './command.service';
-export * from './command';
-export * from './provideAppCommands';
+export * from './action.service';
+export * from './action';
+export * from './provideActions';

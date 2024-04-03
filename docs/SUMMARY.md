@@ -22,8 +22,8 @@
 
 # Plugin SDK
 
+- [Action Service](sdk/action-service.md)
 - [Navigation Service](sdk/navigation-service.md)
-- [Command Service](sdk/command-service.md)
 
 # Tutorials
 

@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { AppToolbarEntry } from '../../types';
 import { AppTitleComponent } from '../title';
-import { CommandService } from '../../services/commands/command.service';
+import { ActionService } from '../../services/commands/action.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -29,7 +29,7 @@ import { CommandService } from '../../services/commands/command.service';
   encapsulation: ViewEncapsulation.None
 })
 export class AppToolbarComponent {
-  private commandService = inject(CommandService);
+  private commandService = inject(ActionService);
 
   @Input()
   entries!: Array<AppToolbarEntry> | null;
