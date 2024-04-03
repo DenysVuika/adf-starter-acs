@@ -1,1 +1,67 @@
-<p>calendar-plugin works!</p>
+<div class="lib-calendar-actions">
+  <button
+    mat-stroked-button
+    color="accent"
+    mwlCalendarToday
+    [(viewDate)]="viewDate">
+    <mat-icon>calendar_today</mat-icon>
+    Today
+  </button>
+
+  <button
+    mat-stroked-button
+    mwlCalendarPreviousView
+    [view]="view"
+    [(viewDate)]="viewDate"
+    (viewDateChange)="closeOpenMonthViewDay()">
+    Previous
+  </button>
+
+  <button
+    mat-stroked-button
+    mwlCalendarNextView
+    [view]="view"
+    [(viewDate)]="viewDate"
+    (viewDateChange)="closeOpenMonthViewDay()">
+    Next
+  </button>
+
+  <h3 class="lib-calendar-title">
+    {{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}
+  </h3>
+
+  <button mat-stroked-button (click)="setView(CalendarView.Month)">Month</button>
+  <button mat-stroked-button (click)="setView(CalendarView.Week)">Week</button>
+  <button mat-stroked-button (click)="setView(CalendarView.Day)">Day</button>
+</div>
+
+<div class="lib-calendar-content" [ngSwitch]="view">
+  <mwl-calendar-month-view
+    *ngSwitchCase="CalendarView.Month"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    [activeDayIsOpen]="activeDayIsOpen"
+    (dayClicked)="dayClicked($event.day)"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-month-view>
+
+  <mwl-calendar-week-view
+    *ngSwitchCase="CalendarView.Week"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-week-view>
+
+  <mwl-calendar-day-view
+    *ngSwitchCase="CalendarView.Day"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-day-view>
+</div>

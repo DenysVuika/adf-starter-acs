@@ -19,6 +19,10 @@ import { appToolbar } from './app.toolbar';
 import { appConfig } from './app.config';
 import { appActions } from './appActions';
 
+// Calendar Plugin
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -29,6 +33,10 @@ import { appActions } from './appActions';
     ContentModule.forRoot(),
     TranslateModule.forRoot({
       loader: { provide: TranslateLoader, useClass: TranslateLoaderService }
+    }),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
     })
   ],
   declarations: [AppComponent],
