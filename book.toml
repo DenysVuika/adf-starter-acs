@@ -3,7 +3,7 @@ authors = ["Denys Vuika"]
 language = "en"
 multilingual = false
 src = "docs"
-title = "ADF Starter Kit for ACS"
+title = "ADF Starter Kit"
 
 [output.html]
 git-repository-url = "https://github.com/DenysVuika/adf-starter-acs"

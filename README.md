@@ -1,6 +1,8 @@
-# ADF/ACS Application
+# ADF Starter Kit
 
 Minimal ready-to-use project template pre-configured with [ADF components](https://github.com/Alfresco/alfresco-ng2-components).
+
+![App Shell](./docs/images/app-shell.png)
 
 See [Online Documentation](https://github.com/DenysVuika/adf-starter-acs) for more details.
 
