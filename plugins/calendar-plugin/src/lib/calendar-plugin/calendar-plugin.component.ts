@@ -6,6 +6,8 @@ import { EventColor } from 'calendar-utils';
 import { Subject } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { FormsModule } from '@angular/forms';
 
 const colors: Record<string, EventColor> = {
   red: {
@@ -25,7 +27,7 @@ const colors: Record<string, EventColor> = {
 @Component({
   selector: 'lib-calendar-plugin',
   standalone: true,
-  imports: [CommonModule, CalendarModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, CalendarModule, MatButtonModule, MatIconModule, MatButtonToggleModule, FormsModule],
   templateUrl: './calendar-plugin.component.html',
   styleUrls: ['./calendar-plugin.component.css'],
   encapsulation: ViewEncapsulation.None
@@ -104,7 +106,7 @@ export class CalendarPluginComponent {
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
-      if ((isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) || events.length === 0) {
+      if ((isSameDay(this.viewDate, date) && this.activeDayIsOpen) || events.length === 0) {
         this.activeDayIsOpen = false;
       } else {
         this.activeDayIsOpen = true;
@@ -125,10 +127,6 @@ export class CalendarPluginComponent {
       return iEvent;
     });
     this.handleEvent('Dropped or resized', event);
-  }
-
-  setView(view: CalendarView) {
-    this.view = view;
   }
 
   closeOpenMonthViewDay() {

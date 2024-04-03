@@ -30,9 +30,11 @@
     {{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}
   </h3>
 
-  <button mat-stroked-button (click)="setView(CalendarView.Month)">Month</button>
-  <button mat-stroked-button (click)="setView(CalendarView.Week)">Week</button>
-  <button mat-stroked-button (click)="setView(CalendarView.Day)">Day</button>
+  <mat-button-toggle-group [(ngModel)]="view" aria-label="View">
+    <mat-button-toggle value="{{ CalendarView.Month }}">Month</mat-button-toggle>
+    <mat-button-toggle value="{{ CalendarView.Week }}">Week</mat-button-toggle>
+    <mat-button-toggle value="{{ CalendarView.Day }}">Day</mat-button-toggle>
+  </mat-button-toggle-group>
 </div>
 
 <div class="lib-calendar-content" [ngSwitch]="view">
