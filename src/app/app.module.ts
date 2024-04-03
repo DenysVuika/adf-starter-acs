@@ -14,7 +14,7 @@ import localeEs from '@angular/common/locales/es';
 registerLocaleData(localeEs);
 
 import { provideSidebarEntries, provideHeaderEntries, provideAppConfig, provideActions } from '@app/sdk';
-import { appSidebarEntries } from './app.sidebar';
+import { appSidebar } from './app.sidebar';
 import { appToolbar } from './app.toolbar';
 import { appConfig } from './app.config';
 import { appActions } from './appActions';
@@ -35,7 +35,7 @@ import { appActions } from './appActions';
   providers: [
     provideTranslations('app', 'assets'),
     provideHeaderEntries(appToolbar),
-    provideSidebarEntries(appSidebarEntries),
+    provideSidebarEntries(appSidebar),
     provideAppConfig(appConfig),
     provideActions(appActions)
   ],

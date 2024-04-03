@@ -1,7 +1,7 @@
 import { AppSidebarEntry } from '@app/sdk';
 
 /** Default global application sidebar entries */
-export const appSidebarEntries: Array<AppSidebarEntry> = [
+export const appSidebar: Array<AppSidebarEntry> = [
   // Documents Plugin
   {
     text: 'APP.NAV.DOCUMENTS',

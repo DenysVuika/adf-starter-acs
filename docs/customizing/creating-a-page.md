@@ -44,7 +44,7 @@ Update the `src/app/app.sidebar.ts` file, to provide a custom Sidebar entry:
 ```ts
 import { AppSidebarEntry } from '@app/sdk';
 
-export const appSidebarEntries: Array<AppSidebarEntry> = [
+export const appSidebar: Array<AppSidebarEntry> = [
   // ...
   {
     text: 'My Page',

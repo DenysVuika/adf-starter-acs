@@ -71,7 +71,7 @@ Next, update the `Sidebar` settings in the `src/app/app.sidebar.ts` file
 
 ```ts
 /** Default global application sidebar entries */
-export const appSidebarEntries: Array<AppSidebarEntry> = [
+export const appSidebar: Array<AppSidebarEntry> = [
   // Trashcan Plugin
   {
     text: 'Trashcan',
