@@ -13,7 +13,7 @@ export interface Widget {
 
 export const APP_WIDGET = new InjectionToken<Widget>('Application Widget');
 
-export function provideAppWidgets(entries: Widget[]): Array<Provider> {
+export function provideWidgets(entries: Widget[]): Array<Provider> {
   return entries.map<Provider>((entry) => ({
     provide: APP_WIDGET,
     multi: true,

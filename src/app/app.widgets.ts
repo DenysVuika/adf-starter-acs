@@ -1,4 +1,4 @@
-import { Widget } from './pages/dashboard/widget';
+import { Widget } from '@app/sdk';
 import { DashboardWidgetComponent } from './pages/dashboard/dashboard-widget.component';
 
 export const appWidgets: Widget[] = [

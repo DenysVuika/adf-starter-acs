@@ -7,10 +7,10 @@ import { AfterViewInit, Component, Input, Type, ViewChild, ViewContainerRef } fr
 })
 export class WidgetContainerComponent implements AfterViewInit {
   @ViewChild('container', { read: ViewContainerRef })
-  container: ViewContainerRef;
+  container!: ViewContainerRef;
 
   @Input()
-  template: Type<unknown>;
+  template?: Type<unknown>;
 
   ngAfterViewInit() {
     this.container.clear();

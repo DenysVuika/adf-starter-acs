@@ -4,9 +4,7 @@ import { DashboardWidgetComponent } from './dashboard-widget.component';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
-import { AddWidgetDialogComponent, AddWidgetDialogData } from './add-widget.dialog';
-import { APP_WIDGET, Widget } from './widget';
-import { WidgetContainerComponent } from './widget-container.component';
+import { APP_WIDGET, Widget, WidgetContainerComponent, AddWidgetDialogComponent, AddWidgetDialogData } from '@app/sdk';
 
 export interface Tile {
   key: string;

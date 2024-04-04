@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule, MatSelectionListChange } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
-import { Widget } from './widget';
+import { Widget } from '../widget';
 
 export interface AddWidgetDialogData {
   widgets: Array<Widget>;
