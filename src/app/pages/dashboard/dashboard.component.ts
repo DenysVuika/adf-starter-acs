@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { AddWidgetDialogComponent, AddWidgetDialogData } from './add-widget.dialog';
-import { APP_WIDGET, WidgetInfo } from './widget';
+import { APP_WIDGET, Widget } from './widget';
 import { WidgetContainerComponent } from './widget-container.component';
 
 export interface Tile {
@@ -13,7 +13,6 @@ export interface Tile {
   color: string;
   cols: number;
   rows: number;
-  text: string;
   component: Type<unknown>;
 }
 
@@ -26,18 +25,18 @@ export interface Tile {
   encapsulation: ViewEncapsulation.None
 })
 export class DashboardComponent {
-  private widgets = inject<WidgetInfo[]>(APP_WIDGET, { optional: true }) || [];
+  private widgets = inject<Widget[]>(APP_WIDGET, { optional: true }) || [];
   private dialog = inject(MatDialog);
 
   tiles: Tile[] = [
-    { key: 'widget.1', text: 'One', cols: 3, rows: 1, color: 'lightblue', component: DashboardWidgetComponent },
-    { key: 'widget.2', text: 'Two', cols: 1, rows: 2, color: 'lightgreen', component: DashboardWidgetComponent },
-    { key: 'widget.3', text: 'Three', cols: 1, rows: 1, color: 'lightpink', component: DashboardWidgetComponent },
-    { key: 'widget.4', text: 'Four', cols: 2, rows: 1, color: '#DDBDF1', component: DashboardWidgetComponent }
+    // { key: 'widget.1', cols: 3, rows: 1, color: 'lightblue', component: DashboardWidgetComponent },
+    // { key: 'widget.2', cols: 1, rows: 2, color: 'lightgreen', component: DashboardWidgetComponent },
+    // { key: 'widget.3', cols: 1, rows: 1, color: 'lightpink', component: DashboardWidgetComponent },
+    // { key: 'widget.4', cols: 2, rows: 1, color: '#DDBDF1', component: DashboardWidgetComponent }
   ];
 
   onAddWidget() {
-    const dialogRef = this.dialog.open<AddWidgetDialogComponent, AddWidgetDialogData, WidgetInfo[]>(AddWidgetDialogComponent, {
+    const dialogRef = this.dialog.open<AddWidgetDialogComponent, AddWidgetDialogData, Widget[]>(AddWidgetDialogComponent, {
       width: '600px',
       data: { widgets: this.widgets }
     });
@@ -47,9 +46,9 @@ export class DashboardComponent {
         const newTiles = result.map<Tile>((widget) => ({
           key: widget.key,
           text: widget.name,
-          cols: 1,
-          rows: 1,
-          color: widget.color,
+          cols: widget.layout.cols,
+          rows: widget.layout.rows,
+          color: widget.layout.color,
           component: widget.component
         }));
 

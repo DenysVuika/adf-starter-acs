@@ -4,10 +4,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule, MatSelectionListChange } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
-import { WidgetInfo } from './widget';
+import { Widget } from './widget';
 
 export interface AddWidgetDialogData {
-  widgets: Array<WidgetInfo>;
+  widgets: Array<Widget>;
 }
 
 @Component({
@@ -17,7 +17,7 @@ export interface AddWidgetDialogData {
   templateUrl: 'add-widget.dialog.html'
 })
 export class AddWidgetDialogComponent {
-  selected: WidgetInfo[] = [];
+  selected: Widget[] = [];
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: AddWidgetDialogData) {}
 

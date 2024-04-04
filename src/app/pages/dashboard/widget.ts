@@ -1,15 +1,19 @@
 import { InjectionToken, Provider, Type } from '@angular/core';
 
-export interface WidgetInfo {
+export interface Widget {
   key: string;
   name: string;
-  color: string; // todo: move to metadata
+  layout: {
+    color: string;
+    cols: number;
+    rows: number;
+  };
   component?: Type<unknown>;
 }
 
-export const APP_WIDGET = new InjectionToken<WidgetInfo>('Application Widget');
+export const APP_WIDGET = new InjectionToken<Widget>('Application Widget');
 
-export function provideAppWidgets(entries: WidgetInfo[]): Array<Provider> {
+export function provideAppWidgets(entries: Widget[]): Array<Provider> {
   return entries.map<Provider>((entry) => ({
     provide: APP_WIDGET,
     multi: true,
