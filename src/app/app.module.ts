@@ -18,6 +18,8 @@ import { appSidebar } from './app.sidebar';
 import { appToolbar } from './app.toolbar';
 import { appConfig } from './app.config';
 import { appActions } from './appActions';
+import { provideAppWidgets } from './pages/dashboard/widget';
+import { appWidgets } from './app.widgets';
 
 @NgModule({
   imports: [
@@ -37,7 +39,8 @@ import { appActions } from './appActions';
     provideHeaderEntries(appToolbar),
     provideSidebarEntries(appSidebar),
     provideAppConfig(appConfig),
-    provideActions(appActions)
+    provideActions(appActions),
+    provideAppWidgets(appWidgets)
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,7 @@
 <h1>Dashboard</h1>
+<div>
+  <button mat-button (click)="onAddWidget()">Add</button>
+</div>
 
 <mat-grid-list cols="4" rowHeight="200px">
   <mat-grid-tile
@@ -6,15 +9,6 @@
     [colspan]="tile.cols"
     [rowspan]="tile.rows"
     [style.background]="tile.color">
-    <ng-container [ngSwitch]="tile.key">
-      <ng-container *ngSwitchCase="'widget.1'">
-        <app-dashboard-widget></app-dashboard-widget>
-      </ng-container>
-      <ng-container *ngSwitchDefault>
-        <!--<mat-grid-tile-header>Header</mat-grid-tile-header>-->
-        {{tile.text}}
-        <!--<mat-grid-tile-footer>Footer</mat-grid-tile-footer>-->
-      </ng-container>
-    </ng-container>
+    <app-widget-container [template]="tile.component"></app-widget-container>
   </mat-grid-tile>
 </mat-grid-list>
