@@ -1,6 +1,5 @@
 import { Component, inject, Type, ViewEncapsulation } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { DashboardWidgetComponent } from './dashboard-widget.component';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
@@ -17,7 +16,7 @@ export interface Tile {
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, MatGridListModule, DashboardWidgetComponent, MatButtonModule, WidgetContainerComponent],
+  imports: [CommonModule, MatGridListModule, MatButtonModule, WidgetContainerComponent],
   templateUrl: 'dashboard.component.html',
   styleUrls: ['dashboard.component.scss'],
   encapsulation: ViewEncapsulation.None
