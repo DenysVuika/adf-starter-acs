@@ -4,12 +4,6 @@ import { SimpleWidget, YouTubeWidget } from './pages/dashboard/widgets';
 export const appWidgets: Widget[] = [
   {
     key: `widget.${Date.now()}`,
-    name: 'YouTube Widget (1:2)',
-    layout: { cols: 2, rows: 2, color: 'lightpink' },
-    component: YouTubeWidget
-  },
-  {
-    key: `widget.${Date.now()}`,
     name: 'Simple Widget (3:1)',
     layout: { cols: 3, rows: 1, color: 'lightblue' },
     component: SimpleWidget
@@ -32,5 +26,11 @@ export const appWidgets: Widget[] = [
     name: 'Simple Widget (2:1)',
     layout: { cols: 2, rows: 1, color: '#DDBDF1' },
     component: SimpleWidget
+  },
+  {
+    key: `widget.${Date.now()}`,
+    name: 'YouTube Widget (2:2)',
+    layout: { cols: 2, rows: 2 },
+    component: YouTubeWidget
   }
 ];

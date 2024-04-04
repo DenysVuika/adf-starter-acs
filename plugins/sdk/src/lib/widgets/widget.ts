@@ -4,7 +4,7 @@ export interface Widget {
   key: string;
   name: string;
   layout: {
-    color: string;
+    color?: string;
     cols: number;
     rows: number;
   };
