@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, Type, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, Type, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-widget-container',
@@ -7,14 +7,14 @@ import { AfterViewInit, Component, Input, Type, ViewChild, ViewContainerRef, Vie
   styleUrls: ['widget-container.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class WidgetContainerComponent implements AfterViewInit {
-  @ViewChild('container', { read: ViewContainerRef })
+export class WidgetContainerComponent implements OnInit {
+  @ViewChild('container', { read: ViewContainerRef, static: true })
   container!: ViewContainerRef;
 
   @Input()
   template?: Type<unknown>;
 
-  ngAfterViewInit() {
+  ngOnInit() {
     this.container.clear();
 
     if (this.template) {
