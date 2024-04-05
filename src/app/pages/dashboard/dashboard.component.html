@@ -9,10 +9,6 @@
     [colspan]="tile.cols"
     [rowspan]="tile.rows"
     [style.background]="tile.color">
-<!--    <mat-grid-tile-header>Header</mat-grid-tile-header>-->
-<!--      <div style="margin: 50px">-->
-        <app-widget-container [template]="tile.component"></app-widget-container>
-<!--      </div>-->
-<!--    <mat-grid-tile-footer>Footer</mat-grid-tile-footer>-->
+    <app-widget-container [template]="tile.component"></app-widget-container>
   </mat-grid-tile>
 </mat-grid-list>
