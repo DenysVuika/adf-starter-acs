@@ -2,7 +2,7 @@
 
 <mat-dialog-content>
   <mat-selection-list #widgetList (selectionChange)="onSelectionChanged($event)">
-    <mat-list-option *ngFor="let widget of data.widgets" [value]="widget">
+    <mat-list-option *ngFor="let widget of data.widgets" [value]="widget" [selected]="data.selected.includes(widget.key)">
       {{widget.name}}
     </mat-list-option>
   </mat-selection-list>
@@ -14,5 +14,5 @@
 
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="selected" cdkFocusInitial>Add</button>
+  <button mat-button [mat-dialog-close]="selectedWidgets" cdkFocusInitial>Update</button>
 </mat-dialog-actions>

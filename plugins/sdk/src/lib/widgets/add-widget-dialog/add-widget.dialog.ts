@@ -8,6 +8,7 @@ import { Widget } from '../widget';
 
 export interface AddWidgetDialogData {
   widgets: Array<Widget>;
+  selected: Array<string>;
 }
 
 @Component({
@@ -17,11 +18,11 @@ export interface AddWidgetDialogData {
   templateUrl: 'add-widget.dialog.html'
 })
 export class AddWidgetDialogComponent {
-  selected: Widget[] = [];
+  selectedWidgets: Widget[] = [];
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: AddWidgetDialogData) {}
 
   onSelectionChanged(event: MatSelectionListChange) {
-    this.selected = event.source.selectedOptions.selected.map((entry) => entry.value);
+    this.selectedWidgets = event.source.selectedOptions.selected.map((entry) => entry.value);
   }
 }
