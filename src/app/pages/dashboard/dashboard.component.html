@@ -9,6 +9,9 @@
     [colspan]="tile.cols"
     [rowspan]="tile.rows"
     [style.background]="tile.color">
-    <app-widget-container [template]="tile.component"></app-widget-container>
+    <ng-container *ngIf="tile.component">
+      <ng-container *ngComponentOutlet="tile.component">
+      </ng-container>
+    </ng-container>
   </mat-grid-tile>
 </mat-grid-list>

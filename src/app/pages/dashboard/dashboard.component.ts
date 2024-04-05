@@ -3,7 +3,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
-import { AddWidgetDialogComponent, AddWidgetDialogData, APP_WIDGET, Widget, WidgetContainerComponent } from '@app/sdk';
+import { AddWidgetDialogComponent, AddWidgetDialogData, APP_WIDGET, Widget } from '@app/sdk';
 
 export interface Tile {
   key: string;
@@ -16,7 +16,7 @@ export interface Tile {
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, MatGridListModule, MatButtonModule, WidgetContainerComponent],
+  imports: [CommonModule, MatGridListModule, MatButtonModule],
   templateUrl: 'dashboard.component.html',
   styleUrls: ['dashboard.component.scss'],
   encapsulation: ViewEncapsulation.None

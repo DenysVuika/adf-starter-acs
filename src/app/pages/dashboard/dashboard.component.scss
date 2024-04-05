@@ -4,3 +4,11 @@
 @import 'primeflex/primeflex.scss';
 @import "primeicons/primeicons.css";
 
+app-dashboard {
+  .mat-grid-tile-content > * {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+}
