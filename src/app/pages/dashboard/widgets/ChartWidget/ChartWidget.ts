@@ -1,3 +1,4 @@
+/* eslint-disable @angular-eslint/component-class-suffix */
 import { Component, OnInit } from '@angular/core';
 import { ChartModule } from 'primeng/chart';
 

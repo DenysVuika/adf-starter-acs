@@ -1,5 +1,5 @@
 import { Widget } from '@app/sdk';
-import { ChartWidget, SimpleWidget, YouTubeWidget } from './pages/dashboard/widgets';
+import { ChartWidget, SimpleWidget, YouTubeWidget, OrgChartWidget } from './pages/dashboard/widgets';
 
 export const appWidgets: Widget[] = [
   {
@@ -38,5 +38,11 @@ export const appWidgets: Widget[] = [
     name: 'Chart (2:2)',
     layout: { cols: 2, rows: 2 },
     component: ChartWidget
+  },
+  {
+    key: `widget.${Date.now()}`,
+    name: 'Org Chart (2:2)',
+    layout: { cols: 2, rows: 2 },
+    component: OrgChartWidget
   }
 ];
