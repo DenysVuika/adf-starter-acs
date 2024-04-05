@@ -20,6 +20,10 @@
 - [Plugins as Libraries](./plugins_libraries.md)
 - [Distributing Plugins](./plugins_distributing.md)
 
+# Widgets
+
+- [Introduction](./widgets/introduction.md)
+
 # Plugin SDK
 
 - [Action Service](sdk/action-service.md)
