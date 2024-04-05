@@ -1,0 +1,17 @@
+<h1>Dashboard</h1>
+<div>
+  <button mat-stroked-button (click)="onAddWidget()">Configure</button>
+</div>
+
+<mat-grid-list cols="4" rowHeight="200px">
+  <mat-grid-tile
+    *ngFor="let tile of tiles"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows"
+    [style.background]="tile.color">
+    <ng-container *ngIf="tile.component">
+      <ng-container *ngComponentOutlet="tile.component">
+      </ng-container>
+    </ng-container>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -1,0 +1,17 @@
+app-org-chart-widget {
+  width: 100%;
+  height: 100%;
+
+  .app-chart-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  .card {
+    background: var(--surface-card);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+}
