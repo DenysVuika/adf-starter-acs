@@ -4,7 +4,7 @@ Minimal ready-to-use project template pre-configured with [ADF components](https
 
 ![App Shell](./docs/images/app-shell.png)
 
-See [Online Documentation](https://github.com/DenysVuika/adf-starter-acs) for more details.
+See [Online Documentation](https://cautious-doodle-lnyl1n7.pages.github.io/) for more details.
 
 ## Quick start
 
@@ -22,7 +22,7 @@ Running with a custom backend URL:
 BASE_URL="https://your.alfresco.backend.com" npm start
 ```
 
-See [Quickstart](https://denysvuika.github.io/adf-starter-acs/quickstart.html) chapter for more details and options.
+See [Quickstart](https://cautious-doodle-lnyl1n7.pages.github.io/quickstart.html) chapter for more details and options.
 
 ## Build
 
