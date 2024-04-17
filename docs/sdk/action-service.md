@@ -96,7 +96,7 @@ Updating the command internals does not break existing plugins using this comman
 
 ## Registering Actions
 
-The commands are registered at the application level in the `src/app/appActions.ts`, and might look like the following:
+The commands are registered at the application level in the `src/app/app.actions.ts`, and might look like the following:
 
 ```ts
 import { Type } from '@angular/core';

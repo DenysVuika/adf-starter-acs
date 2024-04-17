@@ -17,7 +17,7 @@ import { provideSidebarEntries, provideHeaderEntries, provideAppConfig, provideA
 import { appSidebar } from './app.sidebar';
 import { appToolbar } from './app.toolbar';
 import { appConfig } from './app.config';
-import { appActions } from './appActions';
+import { appActions } from './app.actions';
 import { appWidgets } from './app.widgets';
 
 @NgModule({
