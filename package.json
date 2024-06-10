@@ -45,7 +45,7 @@
     "date-fns": "^2.30.0",
     "material-icons": "^1.13.8",
     "minimatch": "^9.0.3",
-    "pdfjs-dist": "3.3.122",
+    "pdfjs-dist": "4.3.136",
     "primeflex": "^3.3.1",
     "primeicons": "^6.0.1",
     "primeng": "^14.2.3",
